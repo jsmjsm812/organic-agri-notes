@@ -4,130 +4,176 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>유기농업기사 실기 정리</title>
-<meta name="description" content="유기농업기사 실기 시험 대비 요점 정리. 정의, 사용 가능 조건, 방제, 축산, 가공을 시험에 나오는 개수와 함께 모았어요.">
+<meta name="description" content="유기농업기사 실기 시험 대비 요점 정리. 카드로 외우고 퀴즈로 확인해요. 정의, 사용 가능 조건, 방제, 축산, 가공을 시험에 나오는 개수와 함께 모았어요.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@700;800&family=Noto+Sans+KR:wght@400;500;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Jua&family=Noto+Sans+KR:wght@400;500;700&display=swap">
 <style>
-/* Layout: 녹색 기본, 고딕 제목 + 나눔명조 본문, 좌우 여백은 화면 너비의 0.1배 */
 :root {
-  --bg: #E9F1E5; --paper: #FBFDF9; --ink: #14301C; --muted: #4B6753; --line: #C7DAC4;
-  --green: #2E7D3E; --green-d: #1B5430; --green-l: #D6E9D0; --leaf: #8CBF55; --soil: #8A6E4B; --bad: #A8402B; --sticky: #F2E38B;
-  --f-head: "Nanum Gothic", "Noto Sans KR", "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+  --bg: #FFF4F8; --paper: #FFFFFF; --ink: #4A2B3C; --muted: #86677A; --line: #F8D7E3;
+  --pink: #F06595; --pink-d: #C2255C; --pink-l: #FFE3EC; --sticky: #FFF1B8;
+  --ac: #F06595; --ac-d: #C2255C; --ac-l: #FFE3EC;
+  --f-head: "Jua", "Noto Sans KR", "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
   --f-body: "Noto Sans KR", "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
   color-scheme: light;
 }
+section[data-c="0"], li[data-c="0"] { --ac: #F06595; --ac-d: #C2255C; --ac-l: #FFE3EC; }
+section[data-c="1"], li[data-c="1"] { --ac: #9775FA; --ac-d: #6741D9; --ac-l: #EDE5FF; }
+section[data-c="2"], li[data-c="2"] { --ac: #20C997; --ac-d: #087F5B; --ac-l: #D3F9E8; }
+section[data-c="3"], li[data-c="3"] { --ac: #FF922B; --ac-d: #C2410C; --ac-l: #FFE8CC; }
+section[data-c="4"], li[data-c="4"] { --ac: #4DABF7; --ac-d: #1864AB; --ac-l: #D0EBFF; }
+section[data-c="5"], li[data-c="5"] { --ac: #F7B731; --ac-d: #8F5A00; --ac-l: #FFF3BF; }
 * { box-sizing: border-box; }
-html { scroll-behavior: smooth; scroll-padding-top: 70px; }
-body { margin: 0; background: var(--bg); color: var(--ink); font-family: var(--f-body); font-size: 16px; line-height: 1.8; font-weight: 400; letter-spacing: -0.005em;
-  padding-inline: max(16px, 10vw, env(safe-area-inset-left, 0px)); padding-bottom: 72px; }
+html { scroll-behavior: smooth; scroll-padding-top: 76px; }
+body { margin: 0; background-color: var(--bg); background-image: radial-gradient(#FFD9E6 1.6px, transparent 1.7px); background-size: 24px 24px; color: var(--ink);
+  font-family: var(--f-body); font-size: 16px; line-height: 1.8; letter-spacing: -0.005em;
+  padding-inline: max(16px, 8vw, env(safe-area-inset-left, 0px)); padding-bottom: calc(120px + env(safe-area-inset-bottom, 0px)); }
 .wrap { max-width: 1080px; margin: 0 auto; }
-h1, h2, h3, h4 { font-family: var(--f-head); font-weight: 800; margin: 0; text-wrap: balance; line-height: 1.35; }
+h1, h2, h3, h4 { font-family: var(--f-head); font-weight: 400; margin: 0; text-wrap: balance; line-height: 1.35; }
 p { margin: 0; }
+button { font-family: inherit; }
+.hide { display: none !important; }
 
-/* 헤더 */
-.hero { display: flex; align-items: center; gap: 24px; padding-block: 44px 22px; flex-wrap: wrap; }
+/* hero */
+.hero { position: relative; display: flex; align-items: center; gap: 20px; flex-wrap: wrap; margin-top: 30px; padding: 26px 28px; background: var(--paper); border: 2px solid var(--line); border-radius: 32px; box-shadow: 0 8px 0 var(--line); overflow: hidden; }
+.hero::before, .hero::after { content: "✦"; position: absolute; color: #FFC2D6; font-size: 22px; }
+.hero::before { top: 14px; right: 26px; } .hero::after { bottom: 12px; right: 90px; font-size: 14px; color: #D0BFFF; }
 .hero .txt { flex: 1 1 320px; min-width: 0; }
-.eyebrow { font-family: var(--f-head); font-weight: 700; font-size: 12.5px; letter-spacing: .16em; color: var(--green); }
-h1 { font-size: clamp(30px, 6.4vw, 48px); margin-top: 6px; color: var(--green-d); }
-.sub { margin-top: 10px; color: var(--muted); max-width: 58ch; }
-.sprout { width: 108px; height: 108px; flex: none; }
-.sprout .stem { stroke: var(--green-d); stroke-width: 5; fill: none; stroke-linecap: round; }
-.sprout .leaf { fill: var(--green); } .sprout .l2 { fill: var(--leaf); }
-.sprout .soilline { stroke: var(--soil); stroke-width: 6; stroke-linecap: round; }
+.eyebrow { font-family: var(--f-head); font-size: 14px; letter-spacing: .12em; color: var(--pink-d); }
+h1 { font-size: clamp(30px, 6.6vw, 50px); margin-top: 4px; color: var(--pink-d); }
+.sub { margin-top: 8px; color: var(--muted); max-width: 58ch; }
+.bouquet { width: 112px; height: 112px; flex: none; }
 
-/* 도구 */
-.tools { display: flex; flex-wrap: wrap; gap: 10px 14px; align-items: center; margin-top: 8px; }
-.search { flex: 1 1 240px; min-width: 0; }
-.search input { width: 100%; font: 700 15px var(--f-head); padding: 10px 14px; border: 2px solid var(--green); border-radius: 10px; background: var(--paper); color: var(--ink); }
-.search input:focus-visible, .toggle:focus-visible, nav a:focus-visible { outline: 3px solid var(--leaf); outline-offset: 2px; }
-.toggle { appearance: none; font: 800 14px var(--f-head); background: var(--paper); color: var(--green-d); border: 2px solid var(--green); border-radius: 999px; padding: 9px 16px; cursor: pointer; }
-.toggle[aria-pressed="true"] { background: var(--green); color: #fff; }
-.hint { margin-top: 8px; font-size: 14px; color: var(--muted); }
-.count { font-family: var(--f-head); font-weight: 700; font-size: 13px; color: var(--muted); }
+/* progress */
+.prog { flex: 1 1 100%; margin-top: 4px; display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+.pbar { flex: 1 1 200px; height: 16px; border-radius: 999px; background: var(--pink-l); overflow: hidden; border: 2px solid #fff; box-shadow: 0 0 0 2px var(--line); }
+.pbar i { display: block; height: 100%; width: 0; border-radius: 999px; background: linear-gradient(90deg, #FFA8C5, #F06595); transition: width .5s cubic-bezier(.3,1.4,.5,1); }
+.ptxt { font: 400 16px var(--f-head); color: var(--pink-d); white-space: nowrap; }
+.pmsg { flex-basis: 100%; font-size: 14px; color: var(--muted); }
 
-nav { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5; background: var(--bg); margin-inline: calc(-1 * max(16px, 10vw, env(safe-area-inset-left, 0px))); padding: 8px max(16px, 10vw, env(safe-area-inset-left, 0px)); border-bottom: 1px solid var(--line); margin-top: 14px; }
+/* tools */
+.tools { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; margin-top: 18px; }
+.search { flex: 1 1 220px; min-width: 0; }
+.search input { width: 100%; font: 500 15px var(--f-body); padding: 11px 18px; border: 2px solid var(--line); border-radius: 999px; background: var(--paper); color: var(--ink); }
+.search input:focus-visible, .btn:focus-visible, nav a:focus-visible, .mem:focus-visible, .qz button:focus-visible, .qz select:focus-visible { outline: 3px solid #B197FC; outline-offset: 2px; }
+.btn { appearance: none; font: 400 16px var(--f-head); background: var(--paper); color: var(--pink-d); border: 2px solid var(--pink); border-radius: 999px; padding: 8px 18px; cursor: pointer; box-shadow: 0 3px 0 var(--pink); transition: transform .12s, box-shadow .12s; }
+.btn:active { transform: translateY(3px); box-shadow: 0 0 0 var(--pink); }
+.btn[aria-pressed="true"] { background: var(--pink); color: #fff; }
+.btn.main { background: linear-gradient(135deg, #F783AC, #9775FA); border-color: transparent; color: #fff; box-shadow: 0 3px 0 #7048E8; font-size: 18px; padding: 9px 22px; }
+.count { font: 400 14px var(--f-head); color: var(--muted); }
+.hint { margin-top: 10px; font-size: 14px; color: var(--muted); }
+
+nav { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5; background: color-mix(in srgb, var(--bg) 92%, transparent); backdrop-filter: blur(6px); margin-inline: calc(-1 * max(16px, 8vw, env(safe-area-inset-left, 0px))); padding: 9px max(16px, 8vw, env(safe-area-inset-left, 0px)); margin-top: 16px; }
 nav ul { list-style: none; margin: 0 auto; padding: 0; max-width: 1080px; display: flex; gap: 8px; overflow-x: auto; scrollbar-width: none; }
-nav a { display: block; white-space: nowrap; text-decoration: none; font: 800 13.5px var(--f-head); color: var(--green-d); background: var(--green-l); padding: 6px 14px; border-radius: 999px; }
-nav a:hover { background: var(--green); color: #fff; }
+nav a { display: block; white-space: nowrap; text-decoration: none; font: 400 15px var(--f-head); color: var(--ac-d); background: var(--ac-l); padding: 6px 15px; border-radius: 999px; border: 2px solid #fff; box-shadow: 0 0 0 2px var(--ac-l); }
+nav a:hover { background: var(--ac); color: #fff; }
 
-/* 섹션 */
+/* sections */
 section { margin-top: 44px; }
-.sh { display: flex; align-items: baseline; flex-wrap: wrap; gap: 4px 16px; padding-bottom: 10px; border-bottom: 3px solid var(--green); }
-.sh h2 { font-size: clamp(22px, 4.6vw, 30px); color: var(--green-d); }
-.sh p { color: var(--muted); font-size: 14.5px; }
-.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 330px), 1fr)); gap: clamp(14px, 1.8vw, 22px); margin-top: 18px; align-items: start; }
-.item { background: var(--paper); border: 1px solid var(--line); border-top: 4px solid var(--green); border-radius: 4px 4px 14px 14px; padding: 16px 18px 18px; min-width: 0; }
+.sh { display: flex; align-items: center; gap: 14px; padding: 12px 18px; background: var(--ac-l); border-radius: 24px; }
+.se { display: grid; place-items: center; flex: none; width: 52px; height: 52px; border-radius: 50%; background: var(--paper); font-size: 26px; box-shadow: 0 3px 0 color-mix(in srgb, var(--ac) 40%, transparent); }
+.sh h2 { font-size: clamp(22px, 4.6vw, 30px); color: var(--ac-d); }
+.sh p { color: var(--muted); font-size: 14.5px; line-height: 1.5; margin-top: 2px; }
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 330px), 1fr)); gap: clamp(16px, 2vw, 24px); margin-top: 20px; align-items: start; }
+.item { position: relative; background: var(--paper); border: 2px solid var(--ac-l); border-radius: 24px; box-shadow: 0 6px 0 var(--ac-l); padding: 16px 18px 18px; min-width: 0; transition: transform .15s; }
+.item:hover { transform: translateY(-2px); }
 .item.wide, .item.pc, .item.fig-item { grid-column: 1 / -1; }
-.item.memo { border-top-color: var(--sticky); background: color-mix(in srgb, var(--sticky) 22%, var(--paper)); }
-.q { font-size: 16.5px; color: var(--green-d); display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 10px; }
-.tag { font: 800 12px var(--f-head); color: #fff; background: var(--green); padding: 2px 9px; border-radius: 999px; white-space: nowrap; }
-.tag-memo { background: color-mix(in srgb, var(--soil) 80%, #000); }
+.item.memo { background: var(--sticky); border-color: #FFE066; box-shadow: 0 6px 0 #FFE066; }
+.item.done { border-color: var(--ac); }
+.q { font-size: 18px; color: var(--ac-d); display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 10px; padding-right: 40px; }
+.tag { font: 400 13px var(--f-head); color: #fff; background: var(--ac-d); padding: 1px 11px; border-radius: 999px; white-space: nowrap; }
+.tag-memo { background: #9C6B12; }
 .a { margin-top: 10px; }
 ol.a, ul.a { padding: 0; list-style: none; counter-reset: n; display: grid; gap: 8px; }
-ol.a li { counter-increment: n; position: relative; padding-left: 34px; }
-ol.a li::before { content: counter(n); position: absolute; left: 0; top: 2px; width: 24px; height: 24px; border-radius: 50%; background: var(--green-l); color: var(--green-d); font: 800 13px/24px var(--f-head); text-align: center; }
-ul.a li { position: relative; padding-left: 18px; }
-ul.a li::before { content: ""; position: absolute; left: 3px; top: .72em; width: 7px; height: 7px; border-radius: 50%; background: var(--green); }
-.ex { margin-top: 10px; font-size: 15px; } .ex b { font-family: var(--f-head); color: var(--green); margin-right: 6px; }
+ol.a li { counter-increment: n; position: relative; padding-left: 36px; }
+ol.a li::before { content: counter(n); position: absolute; left: 0; top: 1px; width: 26px; height: 26px; border-radius: 50%; background: var(--ac-l); color: var(--ac-d); font: 400 15px/26px var(--f-head); text-align: center; }
+ul.a li { position: relative; padding-left: 20px; }
+ul.a li::before { content: "✿"; position: absolute; left: 0; top: 0; color: var(--ac); font-size: 14px; }
+.ex { margin-top: 10px; font-size: 15px; } .ex b { font-family: var(--f-head); font-weight: 400; color: var(--ac-d); margin-right: 6px; }
 .chips { display: flex; flex-wrap: wrap; gap: 8px; }
-.chip { font-weight: 700; background: var(--green-l); color: var(--green-d); border-radius: 8px; padding: 3px 12px; }
+.chip { font-weight: 700; background: var(--ac-l); color: var(--ac-d); border-radius: 999px; padding: 3px 14px; }
 .factgrid { display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 10px; margin-top: 12px; }
-.fact { background: var(--bg); border-radius: 10px; padding: 10px 12px; display: grid; gap: 2px; }
-.fl { font: 700 12.5px var(--f-head); color: var(--muted); } .fv { font-weight: 800; font-size: 17px; color: var(--green-d); } .fn { font-size: 13.5px; color: var(--muted); }
+.fact { background: var(--ac-l); border-radius: 16px; padding: 10px 14px; display: grid; gap: 2px; }
+.fl { font: 500 13px var(--f-body); color: var(--muted); } .fv { font: 400 19px var(--f-head); color: var(--ac-d); } .fn { font-size: 13.5px; color: var(--muted); }
 
-/* 장단점 */
+.mem { position: absolute; top: 10px; right: 12px; appearance: none; border: 0; background: transparent; cursor: pointer; font-size: 26px; line-height: 1; padding: 4px; color: #E3BDCB; transition: transform .2s; }
+.mem:hover { transform: scale(1.15); }
+.mem[aria-pressed="true"] { color: #F0457D; animation: pop .35s; }
+@keyframes pop { 40% { transform: scale(1.5) rotate(-10deg); } }
+
 .pcgrid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; margin-top: 12px; }
-.pro, .con { border-radius: 12px; padding: 12px 16px 16px; }
-.pro { background: color-mix(in srgb, var(--green) 11%, var(--paper)); } .con { background: color-mix(in srgb, var(--bad) 9%, var(--paper)); }
-.pro h4 { color: var(--green-d); } .con h4 { color: var(--bad); }
-.con ol.a li::before { background: color-mix(in srgb, var(--bad) 18%, var(--paper)); color: var(--bad); }
+.pro, .con { border-radius: 20px; padding: 12px 16px 16px; }
+.pro { background: #D3F9E8; } .con { background: #EDE5FF; }
+.pro h4 { color: #087F5B; } .con h4 { color: #5F3DC4; }
+.pro ol.a li::before { background: #fff; color: #087F5B; } .con ol.a li::before { background: #fff; color: #5F3DC4; }
 
-/* 표 */
-.tblwrap { overflow-x: auto; margin-top: 12px; border: 1px solid var(--line); border-radius: 10px; }
+.tblwrap { overflow-x: auto; margin-top: 12px; border: 2px solid var(--ac-l); border-radius: 18px; }
 table { border-collapse: collapse; width: 100%; min-width: 520px; font-size: 15.5px; }
-th, td { padding: 9px 14px; text-align: left; border-bottom: 1px solid var(--line); }
-thead th { background: var(--green-l); font: 800 13px var(--f-head); color: var(--green-d); }
-tbody th { font-family: var(--f-head); font-weight: 800; white-space: nowrap; }
+th, td { padding: 9px 14px; text-align: left; border-bottom: 1px dashed var(--ac-l); }
+thead th { background: var(--ac-l); font: 400 15px var(--f-head); color: var(--ac-d); }
+tbody th { font: 400 16px var(--f-head); white-space: nowrap; }
 tr:last-child th, tr:last-child td { border-bottom: 0; }
-.ox { display: inline-grid; place-items: center; width: 28px; height: 28px; border-radius: 50%; font: 800 14px var(--f-head); }
-.ox.o { background: var(--green); color: #fff; } .ox.x { background: var(--bad); color: #fff; } .ox.n { color: var(--muted); }
+.ox { display: inline-grid; place-items: center; width: 28px; height: 28px; border-radius: 50%; font: 400 15px var(--f-head); }
+.ox.o { background: #20A57A; color: #fff; } .ox.x { background: #7048E8; color: #fff; } .ox.n { color: var(--muted); }
 
-/* 막대 */
 .bars { display: grid; gap: 10px; margin-top: 12px; }
 .bar { display: grid; grid-template-columns: 56px 1fr 52px; gap: 10px; align-items: center; }
-.bl { font: 800 14px var(--f-head); } .bv { font: 800 14px var(--f-head); color: var(--green-d); text-align: right; }
-.bt { background: var(--bg); border-radius: 8px; height: 22px; overflow: hidden; }
-.bt i { display: block; height: 100%; width: var(--w); background: var(--green); border-radius: 8px; }
+.bl { font: 400 15px var(--f-head); } .bv { font: 400 15px var(--f-head); color: var(--ac-d); text-align: right; }
+.bt { background: var(--ac-l); border-radius: 999px; height: 20px; overflow: hidden; }
+.bt i { display: block; height: 100%; width: var(--w); background: var(--ac); border-radius: 999px; }
 
-/* 그림 */
 .fig { margin: 12px 0 0; }
 .fig svg { width: 100%; height: auto; max-width: 720px; display: block; }
 .fig figcaption { margin-top: 6px; color: var(--muted); font-size: 14.5px; }
-.soil circle { fill: var(--soil); } .soil circle:nth-child(2) { opacity: .82; } .soil circle:nth-child(3) { opacity: .66; } .soil circle:nth-child(4) { opacity: .5; }
-.gt-s path { stroke: var(--green); stroke-width: 3; fill: none; stroke-linecap: round; stroke-linejoin: round; }
-.lbl text { font: 800 15px var(--f-head); fill: var(--ink); }
-.cap-s text, text.cap-s { font: 700 13px var(--f-head); fill: var(--muted); }
-.b1 { fill: color-mix(in srgb, var(--green) 9%, var(--paper)); } .b2 { fill: color-mix(in srgb, var(--green) 18%, var(--paper)); }
+.soil circle { fill: #C79A72; } .soil circle:nth-child(2) { opacity: .85; } .soil circle:nth-child(3) { opacity: .7; } .soil circle:nth-child(4) { opacity: .55; }
+.gt-s path { stroke: var(--ac); stroke-width: 3; fill: none; stroke-linecap: round; stroke-linejoin: round; }
+.lbl text { font: 400 16px var(--f-head); fill: var(--ink); }
+.cap-s text, text.cap-s { font: 500 13px var(--f-body); fill: var(--muted); }
+.b1 { fill: color-mix(in srgb, var(--ac) 9%, #fff); } .b2 { fill: color-mix(in srgb, var(--ac) 20%, #fff); }
 .axis { stroke: var(--ink); stroke-width: 2; fill: none; }
-.curve { stroke: var(--green-d); stroke-width: 5; fill: none; stroke-linecap: round; }
+.curve { stroke: var(--ac-d); stroke-width: 5; fill: none; stroke-linecap: round; }
 
-/* 암기 모드 */
-.study .item:not(.on):not(.fig-item) .a, .study .item:not(.on) .factgrid, .study .item:not(.on) .pcgrid, .study .item:not(.on) .tblwrap, .study .item:not(.on) .bars { filter: blur(7px); opacity: .55; }
-.study .item { cursor: pointer; }
-.hide { display: none !important; }
+/* 암기 모드: 답을 하나씩 가렸다가 눌러서 열어요 */
+.study .item :is(ol.a li, ul.a li, .chip, .fv, .fn, p.a, td, .bv, .ex):not(.rev) { filter: blur(6px); opacity: .6; cursor: pointer; transition: filter .2s, opacity .2s; }
+.study .item :is(ol.a li, ul.a li, .chip, .fv, .fn, p.a, td, .bv, .ex).rev { cursor: pointer; }
+.study .item .q { cursor: pointer; }
 .empty { margin-top: 28px; text-align: center; color: var(--muted); }
 footer { margin-top: 52px; color: var(--muted); font-size: 14px; max-width: 70ch; }
-/* 스크롤 따라 걷는 농부 */
-body { padding-bottom: calc(110px + env(safe-area-inset-bottom, 0px)); }
-.farm { position: fixed; left: 0; right: 0; bottom: 0; z-index: 6; height: calc(74px + env(safe-area-inset-bottom, 0px)); pointer-events: none;
-  background: linear-gradient(to bottom, transparent, color-mix(in srgb, var(--green-l) 55%, var(--bg)) 70%); }
-.farm .ground { position: absolute; left: 0; right: 0; bottom: env(safe-area-inset-bottom, 0px); height: 14px; background: var(--soil);
-  border-top: 5px solid var(--green); }
-.farm .lane { position: absolute; left: max(16px, env(safe-area-inset-left, 0px)); right: max(16px, env(safe-area-inset-right, 0px)); bottom: calc(14px + env(safe-area-inset-bottom, 0px)); height: 60px; }
-.sprout-s { position: absolute; bottom: 0; width: 22px; height: 26px; transform-origin: 50% 100%; transform: translateX(-50%) scale(.28); opacity: .55; transition: transform .35s cubic-bezier(.3,1.5,.5,1), opacity .25s; }
+
+/* 퀴즈 */
+.qz { position: fixed; inset: 0; z-index: 20; background: rgba(74, 43, 60, .45); display: grid; place-items: center; padding: 16px; backdrop-filter: blur(3px); }
+.qpanel { width: min(560px, 100%); max-height: 92vh; overflow: auto; background: #FFF9FB; border: 3px solid var(--line); border-radius: 32px; box-shadow: 0 10px 0 var(--line); padding: 20px 22px 24px; }
+.qtop { display: flex; align-items: center; gap: 12px; }
+.qtop .qn { font: 400 16px var(--f-head); color: var(--pink-d); white-space: nowrap; }
+.qtop .pbar { height: 14px; }
+.qx { appearance: none; border: 0; background: var(--pink-l); color: var(--pink-d); width: 36px; height: 36px; border-radius: 50%; font-size: 18px; cursor: pointer; flex: none; }
+.qcard { margin-top: 16px; background: var(--paper); border: 2px solid var(--ac-l); border-radius: 26px; box-shadow: 0 6px 0 var(--ac-l); padding: 22px 20px; min-height: 160px; }
+.qsec { font: 400 14px var(--f-head); color: var(--ac-d); background: var(--ac-l); display: inline-block; padding: 1px 12px; border-radius: 999px; }
+.qq { margin-top: 10px; font: 400 clamp(21px, 5vw, 26px)/1.4 var(--f-head); color: var(--ac-d); }
+.qq .tag { font-size: 14px; vertical-align: middle; margin-left: 6px; }
+.qans { margin-top: 14px; padding-top: 14px; border-top: 2px dashed var(--ac-l); }
+.qans .item { border: 0; box-shadow: none; padding: 0; background: transparent; transform: none; }
+.qans .item .q, .qans .item .mem { display: none; }
+.qans .item .a:first-child { margin-top: 0; }
+.qbtns { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 16px; }
+.qbtns .btn { flex: 1 1 140px; }
+.btn.alt { color: #5F3DC4; border-color: #9775FA; box-shadow: 0 3px 0 #9775FA; }
+.btn.alt:active { box-shadow: 0 0 0 #9775FA; }
+.qsetup { display: grid; gap: 12px; margin-top: 14px; }
+.qsetup label { font: 500 15px var(--f-body); display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+.qsetup select { font: 500 15px var(--f-body); padding: 8px 12px; border-radius: 12px; border: 2px solid var(--line); background: #fff; color: var(--ink); max-width: 100%; }
+.qres { text-align: center; padding: 8px 0; }
+.qres .big { font: 400 54px var(--f-head); color: var(--pink-d); line-height: 1.2; }
+.qres ul { text-align: left; margin: 12px auto 0; padding-left: 20px; max-width: 420px; color: var(--muted); font-size: 15px; }
+.qh { position: fixed; z-index: 30; pointer-events: none; font-size: 22px; animation: fly .9s ease-out forwards; }
+@keyframes fly { to { transform: translate(var(--dx), -90px) scale(1.4); opacity: 0; } }
+
+/* 걷는 아가씨 */
+.farm { position: fixed; left: 0; right: 0; bottom: 0; z-index: 6; height: calc(76px + env(safe-area-inset-bottom, 0px)); pointer-events: none; background: linear-gradient(to bottom, transparent, #FFE3EC 75%); }
+.farm .ground { position: absolute; left: 0; right: 0; bottom: env(safe-area-inset-bottom, 0px); height: 14px; background: #CFF2DC; border-top: 5px solid #A5E3BE; border-radius: 12px 12px 0 0; }
+.farm .lane { position: absolute; left: max(16px, env(safe-area-inset-left, 0px)); right: max(16px, env(safe-area-inset-right, 0px)); bottom: calc(14px + env(safe-area-inset-bottom, 0px)); height: 62px; }
+.sprout-s { position: absolute; bottom: 0; width: 22px; height: 26px; transform-origin: 50% 100%; transform: translateX(-50%) scale(.28); opacity: .5; transition: transform .35s cubic-bezier(.3,1.5,.5,1), opacity .25s; }
 .sprout-s.on { transform: translateX(-50%) scale(1); opacity: 1; }
-.sprout-s .st-{ stroke: var(--green-d); }
 .farmer { position: absolute; bottom: -2px; left: 0; width: 46px; height: 58px; will-change: transform; }
 .farmer .flip { width: 100%; height: 100%; transform-origin: 50% 100%; transition: transform .18s; }
 .farmer.left .flip { transform: scaleX(-1); }
@@ -138,52 +184,59 @@ body { padding-bottom: calc(110px + env(safe-area-inset-bottom, 0px)); }
 .farmer.walk .leg-b, .farmer.walk .arm-a { animation: swing .32s ease-in-out infinite alternate-reverse; }
 @keyframes swing { from { transform: rotate(-26deg); } to { transform: rotate(26deg); } }
 @keyframes bob { from { transform: translateY(0); } to { transform: translateY(-2.5px); } }
-@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .farmer.walk .body, .farmer.walk .leg, .farmer.walk .arm { animation: none; } .sprout-s { transition: none; } }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .farmer.walk .body, .farmer.walk .leg, .farmer.walk .arm, .mem[aria-pressed="true"] { animation: none; } .sprout-s, .pbar i { transition: none; } .qh { display: none; } }
 </style>
 </head>
 <body>
 <div class="farm" aria-hidden="true"><div class="ground"></div><div class="lane" id="lane">
   <svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
-    <symbol id="spr" viewBox="0 0 22 26"><path d="M11 25V13" stroke="#1B5430" stroke-width="2.4" stroke-linecap="round" fill="none"/><path d="M11 14C11 6 5 3 1 4c0 7 4 11 10 10z" fill="#2E7D3E"/><path d="M11 12C11 5 16 2 21 3c0 7-4 10-10 9z" fill="#8CBF55"/></symbol>
+    <symbol id="spr" viewBox="0 0 22 26"><path d="M11 25V11" stroke="#5FB36B" stroke-width="2.2" stroke-linecap="round" fill="none"/><path d="M11 21c-4 0-6-2-7-4 4-1 6 1 7 4z" fill="#8FD19E"/><g fill="#F783AC"><circle cx="11" cy="3.8" r="3.3"/><circle cx="15.2" cy="6.8" r="3.3"/><circle cx="13.6" cy="11.4" r="3.3"/><circle cx="8.4" cy="11.4" r="3.3"/><circle cx="6.8" cy="6.8" r="3.3"/></g><circle cx="11" cy="8.4" r="2.6" fill="#FFD43B"/></symbol>
   </defs></svg>
   <div class="farmer" id="farmer"><div class="flip"><svg viewBox="0 0 46 58" aria-hidden="true">
-    <g class="leg leg-a"><rect x="14" y="40" width="8" height="16" rx="4" fill="#5B3A1E"/></g>
-    <g class="leg leg-b"><rect x="25" y="40" width="8" height="16" rx="4" fill="#5B3A1E"/></g>
+    <g class="leg leg-a"><rect x="15" y="42" width="6" height="14" rx="3" fill="#FFDCC4"/><rect x="13" y="53" width="10" height="5" rx="2.5" fill="#C2255C"/></g>
+    <g class="leg leg-b"><rect x="25" y="42" width="6" height="14" rx="3" fill="#FFDCC4"/><rect x="23" y="53" width="10" height="5" rx="2.5" fill="#C2255C"/></g>
     <g class="body">
-      <rect x="10" y="26" width="26" height="19" rx="7" fill="#2E7D3E"/>
-      <rect x="16" y="26" width="14" height="10" rx="3" fill="#F6F7E6"/>
-      <path d="M17 26v-4M29 26v-4" stroke="#1B5430" stroke-width="2.6" stroke-linecap="round"/>
-      <g class="arm arm-a"><rect x="5" y="28" width="6" height="14" rx="3" fill="#F6D3A8"/></g>
-      <g class="arm arm-b"><rect x="35" y="28" width="6" height="14" rx="3" fill="#F6D3A8"/></g>
-      <circle cx="23" cy="19" r="9.5" fill="#F6D3A8"/>
-      <circle cx="19.6" cy="19" r="1.3" fill="#3A2A1A"/><circle cx="26.4" cy="19" r="1.3" fill="#3A2A1A"/>
-      <path d="M19.5 23c1.2 1.5 5.8 1.5 7 0" stroke="#3A2A1A" stroke-width="1.4" fill="none" stroke-linecap="round"/>
-      <ellipse cx="23" cy="12.5" rx="17" ry="4.2" fill="#E3B95B"/>
-      <path d="M12 12.5c0-8 5-11 11-11s11 3 11 11z" fill="#EDC96F"/>
-      <path d="M12.5 11.2h21" stroke="#2E7D3E" stroke-width="2.6"/>
-      <path d="M23 2c0-4 2-6 5-7-.2 4-2 6-5 7z" fill="#8CBF55"/>
+      <circle cx="8" cy="22" r="5.2" fill="#7A4A3A"/><circle cx="38" cy="22" r="5.2" fill="#7A4A3A"/>
+      <path d="M16 26h14l8 20Q23 52 8 46z" fill="#F783AC"/>
+      <path d="M19 30h8l3 16q-7 2-14 0z" fill="#FFF0F5"/>
+      <g class="arm arm-a"><rect x="10" y="27" width="5" height="13" rx="2.5" fill="#FFE3CF"/></g>
+      <g class="arm arm-b"><rect x="31" y="27" width="5" height="13" rx="2.5" fill="#FFE3CF"/></g>
+      <circle cx="23" cy="16" r="11" fill="#7A4A3A"/>
+      <circle cx="23" cy="18.5" r="9" fill="#FFE3CF"/>
+      <path d="M13.5 16Q23 3 32.5 16Q23 11 13.5 16z" fill="#7A4A3A"/>
+      <circle cx="19.4" cy="19.5" r="1.3" fill="#4A2B3C"/><circle cx="26.6" cy="19.5" r="1.3" fill="#4A2B3C"/>
+      <ellipse cx="16.8" cy="22.4" rx="2" ry="1.2" fill="#FFB3C8"/><ellipse cx="29.2" cy="22.4" rx="2" ry="1.2" fill="#FFB3C8"/>
+      <path d="M21 23.2c1 1.2 3 1.2 4 0" stroke="#4A2B3C" stroke-width="1.2" fill="none" stroke-linecap="round"/>
+      <path d="M12 8l5 2-4 4zM22 8l-5 2 4 4z" fill="#F06595"/><circle cx="17" cy="10" r="1.8" fill="#C2255C"/>
     </g>
   </svg></div></div>
 </div></div>
 <div class="wrap">
 <div class="hero">
   <div class="txt">
-    <div class="eyebrow">ORGANIC AGRICULTURE ENGINEER · 실기</div>
+    <div class="eyebrow">✿ ORGANIC AGRICULTURE ENGINEER · 실기 ✿</div>
     <h1>유기농업기사 실기 정리</h1>
-    <p class="sub">정의, 사용 가능 조건, 방제, 축산, 가공을 주제별로 모았어요. "3가지"처럼 시험에서 요구하는 개수를 제목 옆에 붙였고, 괄호는 노트에 함께 적어둔 다른 개수예요.</p>
+    <p class="sub">카드를 읽고, 가려서 떠올려 보고, 퀴즈로 확인해요. 카드 오른쪽 위 하트를 눌러 외운 카드를 모으면 진행도가 올라가요.</p>
   </div>
-  <svg class="sprout" viewBox="0 0 120 120" aria-hidden="true"><path class="stem" d="M60 108V58"/><path class="leaf l1" d="M60 62C60 30 36 16 12 18c-2 28 14 48 48 44z"/><path class="leaf l2" d="M60 76C60 46 84 32 108 34c2 26-14 44-48 42z"/><path class="soilline" d="M28 108h64"/></svg>
+  <svg class="bouquet" viewBox="0 0 120 120" aria-hidden="true"><path d="M60 112V66M60 96c-14 0-22-8-26-16 14-4 24 2 26 16zM60 90c10-2 20-9 24-18-12-2-22 4-24 18z" fill="#8FD19E" stroke="#5FB36B" stroke-width="3" stroke-linejoin="round"/><g fill="#F783AC"><circle cx="60" cy="22" r="14"/><circle cx="80" cy="36" r="14"/><circle cx="72" cy="58" r="14"/><circle cx="48" cy="58" r="14"/><circle cx="40" cy="36" r="14"/></g><circle cx="60" cy="40" r="11" fill="#FFD43B"/><g fill="#B197FC"><circle cx="20" cy="70" r="7"/><circle cx="100" cy="64" r="6"/></g></svg>
+  <div class="prog">
+    <div class="pbar" role="progressbar" aria-label="외운 카드 진행도" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" id="pbar"><i id="pfill"></i></div>
+    <span class="ptxt" id="ptxt">♡ 0 / 0</span>
+    <span class="pmsg" id="pmsg"></span>
+  </div>
 </div>
 <div class="tools">
   <div class="search"><input id="q" type="search" placeholder="검색 (예: 멀칭, 휴약기간, 3가지)" aria-label="검색"></div>
-  <button class="toggle" id="study" type="button" aria-pressed="false">암기 모드: 꺼짐</button>
+  <button class="btn main" id="quiz" type="button">✨ 퀴즈 시작</button>
+  <button class="btn" id="study" type="button" aria-pressed="false">가려서 외우기</button>
+  <button class="btn" id="unmem" type="button" aria-pressed="false">안 외운 카드만</button>
   <span class="count" id="count" aria-live="polite"></span>
 </div>
-<p class="hint">암기 모드를 켜면 답이 가려지고, 카드를 누를 때마다 나타나요.</p>
-<nav aria-label="목차"><ul><li><a href="#law">법령 · 인증 · 정의</a></li><li><a href="#soil">토양 · 비료</a></li><li><a href="#pest">병해충 · 잡초</a></li><li><a href="#seed">종자 · 작물 · 미생물</a></li><li><a href="#farm">축산 · 꿀벌</a></li><li><a href="#proc">가공</a></li></ul></nav>
+<p class="hint">가려서 외우기를 켜면 답이 흐려져요. 흐린 부분을 누르면 하나씩, 카드 제목을 누르면 한꺼번에 보여요.</p>
+<nav aria-label="목차"><ul><li data-c="0"><a href="#law"><span aria-hidden="true">📜</span> 법령 · 인증 · 정의</a></li><li data-c="1"><a href="#soil"><span aria-hidden="true">🌱</span> 토양 · 비료</a></li><li data-c="2"><a href="#pest"><span aria-hidden="true">🐞</span> 병해충 · 잡초</a></li><li data-c="3"><a href="#seed"><span aria-hidden="true">🌰</span> 종자 · 작물 · 미생물</a></li><li data-c="4"><a href="#farm"><span aria-hidden="true">🐄</span> 축산 · 꿀벌</a></li><li data-c="5"><a href="#proc"><span aria-hidden="true">🍯</span> 가공</a></li></ul></nav>
 <main>
-<section id="law"><header class="sh"><h2>법령 · 인증 · 정의</h2><p>정의는 한 글자도 바꾸지 않고 외워요.</p></header><div class="grid"><article class="item df"><h3 class="q">유기식품등</h3><p class="a">유기식품 및 비식용유기가공품을 말한다.</p></article><article class="item df"><h3 class="q">비식용유기가공품</h3><p class="a">사람이 직접 섭취하지 아니하는 방법으로 사용하거나 소비하기 위하여 유기농수산물을 원료 또는 재료로 사용하여 유기적인 방법으로 생산, 제조·가공 또는 취급되는 가공품을 말한다.</p><p class="ex"><b>예</b> 유기농 사료, 유기사료</p></article><article class="item df"><h3 class="q">유기농(어)업자재</h3><p class="a">유기농축산물(수산물)을 생산, 제조·가공 또는 취급하는 과정에서 사용할 수 있는 허용물질을 원료 또는 재료로 하여 만든 제품을 말한다.</p></article><article class="item df"><h3 class="q">휴약기간</h3><p class="a">사용되는 가축에 대하여 그 생산물이 식용으로 사용하기 전에 동물용의약품의 사용을 제한하는 일정기간을 말한다.</p></article><article class="item df"><h3 class="q">식물공장</h3><p class="a">토양을 이용하지 않고 통제된 시설공간에서 빛, 온도, 수분 및 양분 등을 인공적으로 투입해 작물을 재배하는 시설을 말한다.</p></article><article class="item qa"><h3 class="q">유기식품등 인증대상자<span class="tag">3가지</span></h3><ol class="a"><li>유기농축산물을 생산하는 자</li><li>유기가공식품을 제조·가공하는 자</li><li>비식용유기가공품을 제조·가공하는 자</li></ol></article><article class="item qa"><h3 class="q">인증품 또는 인증품 포장·용기에 표시해야 하는 항목<span class="tag">5가지</span></h3><ol class="a"><li>인증사업자의 성명 또는 업체명</li><li>전화번호</li><li>인증번호</li><li>사업장 소재지</li><li>생산지</li></ol></article><article class="item qa"><h3 class="q">허용물질 선정 기준<span class="tag">3가지</span></h3><ol class="a"><li>해당 물질이 사용목적에 필요하거나 필수적일 것</li><li>해당 물질의 제조, 사용 및 폐기 등의 과정에서 환경에 해로운 영향을 주지 않을 것</li><li>해당 물질이 사람과 동물의 건강과 삶의 질에 중대한 영향을 미치지 않을 것</li></ol></article><article class="item qa"><h3 class="q">친환경농어업법 시행규칙: 친환경농업 육성계획에 포함되는 사항<span class="tag">3가지(5가지)</span></h3><ol class="a"><li>농경지의 보전·개량 및 비옥도의 유지·증진 방안</li><li>농업용수의 수질 등 농업 환경 관리 방안</li><li>환경친화형 농업 자재의 개발 및 보급과 농업 폐자재의 활용 방안</li><li>농업의 부산물 등의 자원화 및 적정 처리 방안</li><li>농업의 친환경적 육성 방안</li><li>국내 친환경농업의 기준 및 목표에 관한 사항</li></ol></article><article class="item qa"><h3 class="q">친환경농어업 육성 및 유기식품 등의 관리·지원에 관한 법률: 친환경농어업 육성계획에 포함하는 사항<span class="tag">2가지</span></h3><ol class="a"><li>농어업의 환경오염 실태 및 개선대책</li><li>친환경농어업의 시범단지 육성 방안</li><li>친환경농어업의 공익적 기능 증대 방안</li><li>육성계획 추진 재원의 조달 방안</li></ol></article><article class="item facts"><h3 class="q">유효기간 · 전환기간</h3><div class="factgrid"><div class="fact"><span class="fl">인증의 유효기간</span><span class="fv">1년</span></div><div class="fact"><span class="fl">공시의 유효기간</span><span class="fv">3년</span></div><div class="fact"><span class="fl">재배포장 토양 검정</span><span class="fv">매년 1회 이상</span></div><div class="fact"><span class="fl">전환기간</span><span class="fv">3년 이상</span></div></div></article><article class="item memo"><h3 class="q">전환기간 관련 메모 (노트에 적힌 그대로)<span class="tag tag-memo">노트 원문</span></h3><ul class="a"><li>재배포장의 토양 매년 1회 이상의 검정 실시, 3년 이상의 전환기간, 1년 단위로 실시</li><li>싹을 틔워 먹는 농산물 3개월 미만인 농산물, 6개월까지로 단축할 수 있다, 인삼, 더덕 등 매년 수확하지 않는 다년생 농산물 또는 1년을 초과하여 사육 중인 가축을</li></ul></article></div></section>
-<section id="soil"><header class="sh"><h2>토양 · 비료</h2><p>사용 조건과 방법은 개수까지 같이 외워요.</p></header><div class="grid"><article class="item qa"><h3 class="q">토양 개량과 작물 생육을 위해 사용 가능한 물질 중 OO의 사용 가능 조건<span class="tag">2가지</span></h3><ol class="a"><li>유전자를 변형한 물질이 포함되지 않을 것</li><li>최종제품에 화학물질이 남지 않을 것</li></ol></article><article class="item df"><h3 class="q">토양 개량 · 작물 생육 사용 가능 물질</h3><div class="a"><div class="chips"><span class="chip">오줌</span><span class="gt"></span><span class="chip">칼륨암석</span><span class="gt"></span><span class="chip">톱밥</span><span class="gt"></span><span class="chip">랑베나이트</span><span class="gt"></span><span class="chip">골분</span><span class="gt"></span><span class="chip">구아노</span><span class="gt"></span><span class="chip">제당산업의 부산물</span></div></div></article><article class="item df"><h3 class="q">혈육골깃 사용 가능 조건</h3><p class="a">화학물질의 첨가나 화학적 제조공정을 거치지 않아야 하고, 항생물질이 검출되지 않을 것</p></article><article class="item qa"><h3 class="q">자연암석분말·분쇄석 또는 그 용액 사용 가능 조건<span class="tag">2가지</span></h3><ol class="a"><li>화학물질의 첨가나 화학적 제조공정을 거치지 않을 것</li><li>사람의 건강 또는 농업환경에 위해요소로 작용하는 광물질이 포함된 암석은 사용하지 않을 것</li></ol></article><article class="item qa"><h3 class="q">사람의 배설물 사용 가능 조건<span class="tag">3가지</span></h3><ol class="a"><li>완전히 발효되어 부숙된 것일 것</li><li>고온발효: 50°C 이상에서 7일 이상 발효된 것</li><li>저온발효: 6개월 이상 발효된 것일 것</li></ol></article><article class="item qa"><h3 class="q">토양 입단구조 형성 방법<span class="tag">3가지</span></h3><ol class="a"><li>유기물을 공급한다</li><li>콩과식물을 재배한다</li><li>토양개량제를 공급한다</li></ol></article><article class="item qa"><h3 class="q">토양 수분 측정 방법<span class="tag">3가지</span></h3><ol class="a"><li>중량법</li><li>중성자법</li><li>TDR법</li></ol></article><article class="item df"><h3 class="q">중성자법</h3><p class="a">중성자수분측정기의 중성자가 방출원으로부터 나오는 중성자 에너지를 이용하는 방법으로 물분자의 수소원자와 충돌하면서 속력이 느려지고 반사되는 원리를 이용하는 방법</p></article><article class="item qa"><h3 class="q">토양 소독 방법<span class="tag">3가지</span></h3><ol class="a"><li>소토법</li><li>증기소독법</li><li>태양열소독법</li></ol></article><article class="item qa"><h3 class="q">멀칭 효과<span class="tag">3가지</span></h3><ol class="a"><li>토양 침식 방지</li><li>비료 유실 방지</li><li>잡초 발생 방지</li></ol></article><article class="item qa"><h3 class="q">엽면시비가 필요한 경우<span class="tag">3가지</span></h3><ol class="a"><li>미량요소가 필요할 경우 실시</li><li>토양시비가 곤란할 경우 실시</li><li>급속한 영양회복이 필요할 경우 실시</li></ol></article><article class="item qa"><h3 class="q">미량원소<span class="tag">7가지</span></h3><ol class="a"><li>염소(Cl)</li><li>철</li><li>망간(Mn)</li><li>붕소</li><li>아연(Zn)</li><li>구리</li><li>몰리브덴</li></ol></article><article class="item qa"><h3 class="q">중금속 검사 성분<span class="tag">4가지(3가지)</span></h3><ol class="a"><li>수은</li><li>구리</li><li>카드뮴</li><li>비소</li><li>납</li></ol></article><article class="item qa"><h3 class="q">완충제 종류<span class="tag">3가지</span></h3><ol class="a"><li>소다회</li><li>중조</li><li>산화마그네슘</li></ol></article><article class="item qa"><h3 class="q">기지현상 원인<span class="tag">3가지</span></h3><ol class="a"><li>연작으로 인한 특정 양분의 소모</li><li>토양의 물리성 악화</li><li>토양전염병의 발생</li></ol></article><article class="item fig-item"><h3 class="q">미국농무부(USDA) 토양 입자 크기</h3><figure class="fig"><svg viewBox="0 0 600 150" role="img" aria-label="토양 입자 크기 순서: 자갈, 모래, 미사, 점토 순으로 작아진다">
+<section id="law" data-c="0"><header class="sh"><span class="se" aria-hidden="true">📜</span><div><h2>법령 · 인증 · 정의</h2><p>정의는 한 글자도 바꾸지 않고 외워요.</p></div></header><div class="grid"><article class="item df"><h3 class="q">유기식품등</h3><p class="a">유기식품 및 비식용유기가공품을 말한다.</p></article><article class="item df"><h3 class="q">비식용유기가공품</h3><p class="a">사람이 직접 섭취하지 아니하는 방법으로 사용하거나 소비하기 위하여 유기농수산물을 원료 또는 재료로 사용하여 유기적인 방법으로 생산, 제조·가공 또는 취급되는 가공품을 말한다.</p><p class="ex"><b>예</b> 유기농 사료, 유기사료</p></article><article class="item df"><h3 class="q">유기농(어)업자재</h3><p class="a">유기농축산물(수산물)을 생산, 제조·가공 또는 취급하는 과정에서 사용할 수 있는 허용물질을 원료 또는 재료로 하여 만든 제품을 말한다.</p></article><article class="item df"><h3 class="q">휴약기간</h3><p class="a">사용되는 가축에 대하여 그 생산물이 식용으로 사용하기 전에 동물용의약품의 사용을 제한하는 일정기간을 말한다.</p></article><article class="item df"><h3 class="q">식물공장</h3><p class="a">토양을 이용하지 않고 통제된 시설공간에서 빛, 온도, 수분 및 양분 등을 인공적으로 투입해 작물을 재배하는 시설을 말한다.</p></article><article class="item qa"><h3 class="q">유기식품등 인증대상자<span class="tag">3가지</span></h3><ol class="a"><li>유기농축산물을 생산하는 자</li><li>유기가공식품을 제조·가공하는 자</li><li>비식용유기가공품을 제조·가공하는 자</li></ol></article><article class="item qa"><h3 class="q">인증품 또는 인증품 포장·용기에 표시해야 하는 항목<span class="tag">5가지</span></h3><ol class="a"><li>인증사업자의 성명 또는 업체명</li><li>전화번호</li><li>인증번호</li><li>사업장 소재지</li><li>생산지</li></ol></article><article class="item qa"><h3 class="q">허용물질 선정 기준<span class="tag">3가지</span></h3><ol class="a"><li>해당 물질이 사용목적에 필요하거나 필수적일 것</li><li>해당 물질의 제조, 사용 및 폐기 등의 과정에서 환경에 해로운 영향을 주지 않을 것</li><li>해당 물질이 사람과 동물의 건강과 삶의 질에 중대한 영향을 미치지 않을 것</li></ol></article><article class="item qa"><h3 class="q">친환경농어업법 시행규칙: 친환경농업 육성계획에 포함되는 사항<span class="tag">3가지(5가지)</span></h3><ol class="a"><li>농경지의 보전·개량 및 비옥도의 유지·증진 방안</li><li>농업용수의 수질 등 농업 환경 관리 방안</li><li>환경친화형 농업 자재의 개발 및 보급과 농업 폐자재의 활용 방안</li><li>농업의 부산물 등의 자원화 및 적정 처리 방안</li><li>농업의 친환경적 육성 방안</li><li>국내 친환경농업의 기준 및 목표에 관한 사항</li></ol></article><article class="item qa"><h3 class="q">친환경농어업 육성 및 유기식품 등의 관리·지원에 관한 법률: 친환경농어업 육성계획에 포함하는 사항<span class="tag">2가지</span></h3><ol class="a"><li>농어업의 환경오염 실태 및 개선대책</li><li>친환경농어업의 시범단지 육성 방안</li><li>친환경농어업의 공익적 기능 증대 방안</li><li>육성계획 추진 재원의 조달 방안</li></ol></article><article class="item facts"><h3 class="q">유효기간 · 전환기간</h3><div class="factgrid"><div class="fact"><span class="fl">인증의 유효기간</span><span class="fv">1년</span></div><div class="fact"><span class="fl">공시의 유효기간</span><span class="fv">3년</span></div><div class="fact"><span class="fl">재배포장 토양 검정</span><span class="fv">매년 1회 이상</span></div><div class="fact"><span class="fl">전환기간</span><span class="fv">3년 이상</span></div></div></article><article class="item memo"><h3 class="q">전환기간 관련 메모 (노트에 적힌 그대로)<span class="tag tag-memo">노트 원문</span></h3><ul class="a"><li>재배포장의 토양 매년 1회 이상의 검정 실시, 3년 이상의 전환기간, 1년 단위로 실시</li><li>싹을 틔워 먹는 농산물 3개월 미만인 농산물, 6개월까지로 단축할 수 있다, 인삼, 더덕 등 매년 수확하지 않는 다년생 농산물 또는 1년을 초과하여 사육 중인 가축을</li></ul></article></div></section>
+<section id="soil" data-c="1"><header class="sh"><span class="se" aria-hidden="true">🌱</span><div><h2>토양 · 비료</h2><p>사용 조건과 방법은 개수까지 같이 외워요.</p></div></header><div class="grid"><article class="item qa"><h3 class="q">토양 개량과 작물 생육을 위해 사용 가능한 물질 중 OO의 사용 가능 조건<span class="tag">2가지</span></h3><ol class="a"><li>유전자를 변형한 물질이 포함되지 않을 것</li><li>최종제품에 화학물질이 남지 않을 것</li></ol></article><article class="item df"><h3 class="q">토양 개량 · 작물 생육 사용 가능 물질</h3><div class="a"><div class="chips"><span class="chip">오줌</span><span class="gt"></span><span class="chip">칼륨암석</span><span class="gt"></span><span class="chip">톱밥</span><span class="gt"></span><span class="chip">랑베나이트</span><span class="gt"></span><span class="chip">골분</span><span class="gt"></span><span class="chip">구아노</span><span class="gt"></span><span class="chip">제당산업의 부산물</span></div></div></article><article class="item df"><h3 class="q">혈육골깃 사용 가능 조건</h3><p class="a">화학물질의 첨가나 화학적 제조공정을 거치지 않아야 하고, 항생물질이 검출되지 않을 것</p></article><article class="item qa"><h3 class="q">자연암석분말·분쇄석 또는 그 용액 사용 가능 조건<span class="tag">2가지</span></h3><ol class="a"><li>화학물질의 첨가나 화학적 제조공정을 거치지 않을 것</li><li>사람의 건강 또는 농업환경에 위해요소로 작용하는 광물질이 포함된 암석은 사용하지 않을 것</li></ol></article><article class="item qa"><h3 class="q">사람의 배설물 사용 가능 조건<span class="tag">3가지</span></h3><ol class="a"><li>완전히 발효되어 부숙된 것일 것</li><li>고온발효: 50°C 이상에서 7일 이상 발효된 것</li><li>저온발효: 6개월 이상 발효된 것일 것</li></ol></article><article class="item qa"><h3 class="q">토양 입단구조 형성 방법<span class="tag">3가지</span></h3><ol class="a"><li>유기물을 공급한다</li><li>콩과식물을 재배한다</li><li>토양개량제를 공급한다</li></ol></article><article class="item qa"><h3 class="q">토양 수분 측정 방법<span class="tag">3가지</span></h3><ol class="a"><li>중량법</li><li>중성자법</li><li>TDR법</li></ol></article><article class="item df"><h3 class="q">중성자법</h3><p class="a">중성자수분측정기의 중성자가 방출원으로부터 나오는 중성자 에너지를 이용하는 방법으로 물분자의 수소원자와 충돌하면서 속력이 느려지고 반사되는 원리를 이용하는 방법</p></article><article class="item qa"><h3 class="q">토양 소독 방법<span class="tag">3가지</span></h3><ol class="a"><li>소토법</li><li>증기소독법</li><li>태양열소독법</li></ol></article><article class="item qa"><h3 class="q">멀칭 효과<span class="tag">3가지</span></h3><ol class="a"><li>토양 침식 방지</li><li>비료 유실 방지</li><li>잡초 발생 방지</li></ol></article><article class="item qa"><h3 class="q">엽면시비가 필요한 경우<span class="tag">3가지</span></h3><ol class="a"><li>미량요소가 필요할 경우 실시</li><li>토양시비가 곤란할 경우 실시</li><li>급속한 영양회복이 필요할 경우 실시</li></ol></article><article class="item qa"><h3 class="q">미량원소<span class="tag">7가지</span></h3><ol class="a"><li>염소(Cl)</li><li>철</li><li>망간(Mn)</li><li>붕소</li><li>아연(Zn)</li><li>구리</li><li>몰리브덴</li></ol></article><article class="item qa"><h3 class="q">중금속 검사 성분<span class="tag">4가지(3가지)</span></h3><ol class="a"><li>수은</li><li>구리</li><li>카드뮴</li><li>비소</li><li>납</li></ol></article><article class="item qa"><h3 class="q">완충제 종류<span class="tag">3가지</span></h3><ol class="a"><li>소다회</li><li>중조</li><li>산화마그네슘</li></ol></article><article class="item qa"><h3 class="q">기지현상 원인<span class="tag">3가지</span></h3><ol class="a"><li>연작으로 인한 특정 양분의 소모</li><li>토양의 물리성 악화</li><li>토양전염병의 발생</li></ol></article><article class="item fig-item"><h3 class="q">미국농무부(USDA) 토양 입자 크기</h3><figure class="fig"><svg viewBox="0 0 600 150" role="img" aria-label="토양 입자 크기 순서: 자갈, 모래, 미사, 점토 순으로 작아진다">
 <g class="soil">
 <circle cx="70" cy="62" r="46"/><circle cx="215" cy="62" r="31"/><circle cx="335" cy="62" r="18"/><circle cx="430" cy="62" r="8"/>
 </g>
@@ -191,52 +244,182 @@ body { padding-bottom: calc(110px + env(safe-area-inset-bottom, 0px)); }
 <g class="lbl"><text x="70" y="131" text-anchor="middle">자갈</text><text x="215" y="131" text-anchor="middle">모래</text><text x="335" y="131" text-anchor="middle">미사</text><text x="430" y="131" text-anchor="middle">점토</text></g>
 <text class="cap-s" x="520" y="66" text-anchor="middle">입자가 점점 작아져요</text>
 </svg><figcaption>미국농무부(USDA) 입경 순서: 자갈 &gt; 모래 &gt; 미사 &gt; 점토</figcaption></figure></article></div></section>
-<section id="pest"><header class="sh"><h2>병해충 · 잡초</h2><p>방제 방법은 종류별로 나눠서 외워요.</p></header><div class="grid"><article class="item qa"><h3 class="q">병해충 및 잡초의 방제·조절 방법<span class="tag">3가지(5가지)</span></h3><ol class="a"><li>적합한 작물과 품종의 선택</li><li>적합한 돌려짓기(윤작) 체계</li><li>기계적 경운</li><li>동물의 방사</li><li>멀칭·예취 및 화염제초</li><li>덫·울타리·빛 및 소리와 같은 기계적 통제</li></ol></article><article class="item qa"><h3 class="q">해충 방제 중 경종적 방제법<span class="tag">3가지</span></h3><ol class="a"><li>내충성 품종 선택</li><li>윤작 실시</li><li>시비 및 객토 실시하여 토양을 개선</li></ol></article><article class="item pc"><h3 class="q">생물적 방제법 장점과 단점<span class="tag">3가지씩</span></h3><div class="pcgrid"><div class="pro"><h4>장점</h4><ol class="a"><li>다른 식물이나 생태계에 피해를 주지 않는다</li><li>방제효과가 반영구적 혹은 영구적이다</li><li>생태계의 균형을 유지할 수 있다</li></ol></div><div class="con"><h4>단점</h4><ol class="a"><li>해충의 밀도가 높을 경우 효과가 없다</li><li>시간 및 경비가 많이 요구된다</li><li>대상 해충이 제한적이다</li></ol></div></div></article><article class="item df"><h3 class="q">포식성 천적</h3><div class="a"><div class="chips"><span class="chip">꽃등에</span><span class="gt"></span><span class="chip">애꽃노린재</span><span class="gt"></span><span class="chip">딱정벌레</span><span class="gt"></span><span class="chip">진디혹파리</span></div></div></article><article class="item facts"><h3 class="q">식물성 살충 자재</h3><div class="factgrid"><div class="fact"><span class="fl">제충국</span><span class="fv">피레트린</span><span class="fn">식물의 꽃</span></div><div class="fact"><span class="fl">데리스</span><span class="fv">로테논</span><span class="fn">식물의 뿌리</span></div></div></article><article class="item df"><h3 class="q">병해충 관리 사용 가능 물질</h3><div class="a"><div class="chips"><span class="chip">규조토</span><span class="gt"></span><span class="chip">메타알데하이드</span><span class="gt"></span><span class="chip">데리스</span><span class="gt"></span><span class="chip">생석회</span></div></div></article><article class="item qa"><h3 class="q">벼 종자에 의해 전염되는 병<span class="tag">3가지</span></h3><ol class="a"><li>키다리병</li><li>도열병</li><li>깨씨무늬병</li></ol></article><article class="item qa"><h3 class="q">두과작물·녹비작물·심근성작물을 이용한 장기간의 윤작 계획 수립·이행 방법<span class="tag">3가지</span></h3><ol class="a"><li>3년 이내의 주기로 두과작물, 녹비작물, 또는 심근성작물을 일정기간 이상 재배하여 토양에 환원한다.</li><li>2년 이내의 주기로 식물분류학상 “과”가 다른 작물을 재배하되 재배작물에 두과작물, 녹비작물 또는 심근성작물을 포함한다.</li><li>2년 이내의 주기로 담수재배작물과 밭 재배작물을 조합하여 답전윤환한다.</li><li>매년 두과작물, 녹비작물, 심근성작물을 이용하여 초생재배한다.</li></ol></article></div></section>
-<section id="seed"><header class="sh"><h2>종자 · 작물 · 미생물</h2><p>약어는 노트에 적힌 그대로 옮겼어요.</p></header><div class="grid"><article class="item df"><h3 class="q">단명종자<span class="tag tag-memo">암기 약어</span></h3><p class="a">단명한(콩고 간) 강(상)옥수, 기, 목, 양</p></article><article class="item df"><h3 class="q">장명종자<span class="tag tag-memo">암기 약어</span></h3><p class="a">수, 토, 가, 오, 비</p></article><article class="item df"><h3 class="q">혐광성 종자</h3><div class="a"><div class="chips"><span class="chip">양파</span><span class="gt"></span><span class="chip">파</span><span class="gt"></span><span class="chip">토마토</span></div></div></article><article class="item facts"><h3 class="q">결실 가지</h3><div class="factgrid"><div class="fact"><span class="fl">2년생 가지 결실</span><span class="fv">복숭아 · 매실 · 살구 · 자두</span></div><div class="fact"><span class="fl">3년생 가지 결실</span><span class="fv">사과 · 배</span></div></div></article><article class="item facts"><h3 class="q">과(科) 구분</h3><div class="factgrid"><div class="fact"><span class="fl">유채</span><span class="fv">십자화과</span></div><div class="fact"><span class="fl">뚱딴지</span><span class="fv">국화과</span></div></div></article><article class="item facts"><h3 class="q">함께 심는 작물</h3><div class="factgrid"><div class="fact"><span class="fl">서로 도움</span><span class="fv">동반작물</span></div><div class="fact"><span class="fl">보호</span><span class="fv">보호작물</span></div></div></article><article class="item df"><h3 class="q">어린잎채소 생육기간</h3><p class="a">15일 내외</p></article><article class="item facts"><h3 class="q">미생물 짝꿍<span class="tag tag-memo">노트 원문</span></h3><div class="factgrid"><div class="fact"><span class="fl">유익균</span><span class="fv">방선균</span></div><div class="fact"><span class="fl">효소</span><span class="fv">유산균</span></div><div class="fact"><span class="fl">식물 뿌리</span><span class="fv">균근균</span></div></div></article><article class="item fig-item"><h3 class="q">미생물 생장 단계</h3><figure class="fig"><svg viewBox="0 0 640 290" role="img" aria-label="미생물 생장 곡선: 적응기, 대수기, 제한기, 정지기, 사멸기 순서">
+<section id="pest" data-c="2"><header class="sh"><span class="se" aria-hidden="true">🐞</span><div><h2>병해충 · 잡초</h2><p>방제 방법은 종류별로 나눠서 외워요.</p></div></header><div class="grid"><article class="item qa"><h3 class="q">병해충 및 잡초의 방제·조절 방법<span class="tag">3가지(5가지)</span></h3><ol class="a"><li>적합한 작물과 품종의 선택</li><li>적합한 돌려짓기(윤작) 체계</li><li>기계적 경운</li><li>동물의 방사</li><li>멀칭·예취 및 화염제초</li><li>덫·울타리·빛 및 소리와 같은 기계적 통제</li></ol></article><article class="item qa"><h3 class="q">해충 방제 중 경종적 방제법<span class="tag">3가지</span></h3><ol class="a"><li>내충성 품종 선택</li><li>윤작 실시</li><li>시비 및 객토 실시하여 토양을 개선</li></ol></article><article class="item pc"><h3 class="q">생물적 방제법 장점과 단점<span class="tag">3가지씩</span></h3><div class="pcgrid"><div class="pro"><h4>장점</h4><ol class="a"><li>다른 식물이나 생태계에 피해를 주지 않는다</li><li>방제효과가 반영구적 혹은 영구적이다</li><li>생태계의 균형을 유지할 수 있다</li></ol></div><div class="con"><h4>단점</h4><ol class="a"><li>해충의 밀도가 높을 경우 효과가 없다</li><li>시간 및 경비가 많이 요구된다</li><li>대상 해충이 제한적이다</li></ol></div></div></article><article class="item df"><h3 class="q">포식성 천적</h3><div class="a"><div class="chips"><span class="chip">꽃등에</span><span class="gt"></span><span class="chip">애꽃노린재</span><span class="gt"></span><span class="chip">딱정벌레</span><span class="gt"></span><span class="chip">진디혹파리</span></div></div></article><article class="item facts"><h3 class="q">식물성 살충 자재</h3><div class="factgrid"><div class="fact"><span class="fl">제충국</span><span class="fv">피레트린</span><span class="fn">식물의 꽃</span></div><div class="fact"><span class="fl">데리스</span><span class="fv">로테논</span><span class="fn">식물의 뿌리</span></div></div></article><article class="item df"><h3 class="q">병해충 관리 사용 가능 물질</h3><div class="a"><div class="chips"><span class="chip">규조토</span><span class="gt"></span><span class="chip">메타알데하이드</span><span class="gt"></span><span class="chip">데리스</span><span class="gt"></span><span class="chip">생석회</span></div></div></article><article class="item qa"><h3 class="q">벼 종자에 의해 전염되는 병<span class="tag">3가지</span></h3><ol class="a"><li>키다리병</li><li>도열병</li><li>깨씨무늬병</li></ol></article><article class="item qa"><h3 class="q">두과작물·녹비작물·심근성작물을 이용한 장기간의 윤작 계획 수립·이행 방법<span class="tag">3가지</span></h3><ol class="a"><li>3년 이내의 주기로 두과작물, 녹비작물, 또는 심근성작물을 일정기간 이상 재배하여 토양에 환원한다.</li><li>2년 이내의 주기로 식물분류학상 “과”가 다른 작물을 재배하되 재배작물에 두과작물, 녹비작물 또는 심근성작물을 포함한다.</li><li>2년 이내의 주기로 담수재배작물과 밭 재배작물을 조합하여 답전윤환한다.</li><li>매년 두과작물, 녹비작물, 심근성작물을 이용하여 초생재배한다.</li></ol></article></div></section>
+<section id="seed" data-c="3"><header class="sh"><span class="se" aria-hidden="true">🌰</span><div><h2>종자 · 작물 · 미생물</h2><p>약어는 노트에 적힌 그대로 옮겼어요.</p></div></header><div class="grid"><article class="item df"><h3 class="q">단명종자<span class="tag tag-memo">암기 약어</span></h3><p class="a">단명한(콩고 간) 강(상)옥수, 기, 목, 양</p></article><article class="item df"><h3 class="q">장명종자<span class="tag tag-memo">암기 약어</span></h3><p class="a">수, 토, 가, 오, 비</p></article><article class="item df"><h3 class="q">혐광성 종자</h3><div class="a"><div class="chips"><span class="chip">양파</span><span class="gt"></span><span class="chip">파</span><span class="gt"></span><span class="chip">토마토</span></div></div></article><article class="item facts"><h3 class="q">결실 가지</h3><div class="factgrid"><div class="fact"><span class="fl">2년생 가지 결실</span><span class="fv">복숭아 · 매실 · 살구 · 자두</span></div><div class="fact"><span class="fl">3년생 가지 결실</span><span class="fv">사과 · 배</span></div></div></article><article class="item facts"><h3 class="q">과(科) 구분</h3><div class="factgrid"><div class="fact"><span class="fl">유채</span><span class="fv">십자화과</span></div><div class="fact"><span class="fl">뚱딴지</span><span class="fv">국화과</span></div></div></article><article class="item facts"><h3 class="q">함께 심는 작물</h3><div class="factgrid"><div class="fact"><span class="fl">서로 도움</span><span class="fv">동반작물</span></div><div class="fact"><span class="fl">보호</span><span class="fv">보호작물</span></div></div></article><article class="item df"><h3 class="q">어린잎채소 생육기간</h3><p class="a">15일 내외</p></article><article class="item facts"><h3 class="q">미생물 짝꿍<span class="tag tag-memo">노트 원문</span></h3><div class="factgrid"><div class="fact"><span class="fl">유익균</span><span class="fv">방선균</span></div><div class="fact"><span class="fl">효소</span><span class="fv">유산균</span></div><div class="fact"><span class="fl">식물 뿌리</span><span class="fv">균근균</span></div></div></article><article class="item fig-item"><h3 class="q">미생물 생장 단계</h3><figure class="fig"><svg viewBox="0 0 640 290" role="img" aria-label="미생물 생장 곡선: 적응기, 대수기, 제한기, 정지기, 사멸기 순서">
 <rect class="b1" x="60" y="20" width="110" height="200"/><rect class="b2" x="170" y="20" width="130" height="200"/><rect class="b1" x="300" y="20" width="80" height="200"/><rect class="b2" x="380" y="20" width="75" height="200"/><rect class="b1" x="455" y="20" width="145" height="200"/>
 <path class="axis" d="M60 20V220H600"/>
 <path class="curve" d="M60 200C100 199 140 197 170 190C215 160 250 80 300 52C330 40 350 36 380 35C410 34 435 35 455 40C500 52 540 140 600 205"/>
 <g class="lbl"><text x="115" y="248" text-anchor="middle">적응기</text><text x="235" y="248" text-anchor="middle">대수기</text><text x="340" y="248" text-anchor="middle">제한기</text><text x="417" y="248" text-anchor="middle">정지기</text><text x="527" y="248" text-anchor="middle">사멸기</text></g>
 <g class="cap-s"><text x="30" y="125" transform="rotate(-90 30 125)" text-anchor="middle">세균 수</text><text x="330" y="278" text-anchor="middle">시간 →</text></g>
 </svg><figcaption>적응기 → 대수기 → 제한기 → 정지기 → 사멸기</figcaption></figure></article></div></section>
-<section id="farm"><header class="sh"><h2>축산 · 꿀벌</h2><p>숫자는 단위까지 정확히 외워요.</p></header><div class="grid"><article class="item tblitem"><h3 class="q">입식 후 기간</h3><div class="factgrid"><div class="fact"><span class="fl">한우·육우</span><span class="fv">12개월</span></div><div class="fact"><span class="fl">젖소</span><span class="fv">6개월</span></div><div class="fact"><span class="fl">돼지</span><span class="fv">5개월</span></div><div class="fact"><span class="fl">산란계</span><span class="fv">3개월</span></div></div><p class="ex"><b>알</b> 3개월</p></article><article class="item tblitem"><h3 class="q">한우 사육 면적</h3><div class="bars">
+<section id="farm" data-c="4"><header class="sh"><span class="se" aria-hidden="true">🐄</span><div><h2>축산 · 꿀벌</h2><p>숫자는 단위까지 정확히 외워요.</p></div></header><div class="grid"><article class="item tblitem"><h3 class="q">입식 후 기간</h3><div class="factgrid"><div class="fact"><span class="fl">한우·육우</span><span class="fv">12개월</span></div><div class="fact"><span class="fl">젖소</span><span class="fv">6개월</span></div><div class="fact"><span class="fl">돼지</span><span class="fv">5개월</span></div><div class="fact"><span class="fl">산란계</span><span class="fv">3개월</span></div></div><p class="ex"><b>알</b> 3개월</p></article><article class="item tblitem"><h3 class="q">한우 사육 면적</h3><div class="bars">
 <div class="bar"><span class="bl">번식우</span><span class="bt"><i style="--w:100%"></i></span><span class="bv">10㎡</span></div>
 <div class="bar"><span class="bl">비육우</span><span class="bt"><i style="--w:71%"></i></span><span class="bv">7.1㎡</span></div>
 <div class="bar"><span class="bl">송아지</span><span class="bt"><i style="--w:25%"></i></span><span class="bv">2.5㎡</span></div></div>
 <p class="ex"><b>한우</b> 번식우 &gt; 비육우 &gt; 송아지</p><p class="ex"><b>돼지</b> 웅돈 &gt; 번식돈 &gt; 비육돈</p></article><article class="item qa"><h3 class="q">축사 조건<span class="tag">3가지(2가지)</span></h3><ol class="a"><li>사료와 음수는 접근이 용이할 것</li><li>공기순환, 온도·습도, 먼지 및 가스농도가 가축건강에 유해하지 아니한 수준 이내로 유지되어야 하고, 건축물은 적절한 단열·환기시설을 갖출 것</li><li>충분한 자연환기와 햇빛이 제공될 수 있을 것</li></ol></article><article class="item qa"><h3 class="q">유기가축·비유기가축 병행사육 시 준수사항<span class="tag">3가지(1가지)</span></h3><ol class="a"><li>유기가축과 비유기가축의 생산부터 출하까지 구분관리 계획을 마련하여 이행하여야 한다</li><li>유기가축, 사료취급, 약품투여 등은 비유기가축과 구분하여 정확히 기록 관리하고 보관하여야 한다</li><li>인증가축은 비유기 가축사료, 금지물질 저장, 사료공급·혼합 및 취급 지역에서 안전하게 격리되어야 한다</li></ol></article><article class="item qa"><h3 class="q">꿀벌의 질병 사전 예방 조치<span class="tag">4가지(5가지)</span></h3><ol class="a"><li>지역 조건에 잘 적응할 수 있는 튼튼한 품종의 선택</li><li>필요한 경우 여왕벌의 갱신</li><li>정기적인 청소 및 시설·장비의 소독</li><li>밀랍의 정기적 교체</li><li>오염된 벌통과 재료의 폐기</li></ol></article><article class="item memo"><h3 class="q">기준 메모 (노트에 적힌 그대로)<span class="tag tag-memo">노트 원문</span></h3><ul class="a"><li>화학비료: 3분의 1이하 범위 내</li><li>동물용의약품 잔류 허용기준의 10분의 1</li><li>100퍼센트 유기사료 급여</li></ul></article></div></section>
-<section id="proc"><header class="sh"><h2>가공</h2><p>O와 X를 헷갈리지 않게 표로 봐요.</p></header><div class="grid"><article class="item tblitem wide"><h3 class="q">식품첨가물 · 가공보조제 구분<span class="tag tag-memo">—는 노트에 없음</span></h3><div class="tblwrap"><table><thead><tr><th>물질</th><th>식품첨가물</th><th>가공보조제</th><th>사용 가능 범위</th></tr></thead><tbody><tr><th scope="row">과산화수소</th><td><span class="ox x">X</span></td><td><span class="ox o">O</span></td><td>식품 표면의 세척·소독제</td></tr><tr><th scope="row">벤토나이트</th><td><span class="ox x">X</span></td><td><span class="ox o">O</span></td><td>—</td></tr><tr><th scope="row">규조토</th><td><span class="ox x">X</span></td><td><span class="ox o">O</span></td><td>—</td></tr><tr><th scope="row">백도토</th><td><span class="ox n">—</span></td><td><span class="ox o">O</span></td><td>청징 또는 여과보조제</td></tr><tr><th scope="row">구아검</th><td><span class="ox o">O</span></td><td><span class="ox x">X</span></td><td>—</td></tr><tr><th scope="row">비타민 C</th><td><span class="ox o">O</span></td><td><span class="ox x">X</span></td><td>—</td></tr><tr><th scope="row">구연산</th><td><span class="ox o">O</span></td><td><span class="ox o">O</span></td><td>제한 없음</td></tr></tbody></table></div></article><article class="item qa"><h3 class="q">유기가공식품 인증기준: 포장<span class="tag">2가지</span></h3><ol class="a"><li>포장재와 포장방법은 유기가공식품을 충분히 보호하면서 환경에 미치는 나쁜 영향을 최소화되도록 선정하여야 한다</li><li>포장재는 유기가공식품을 오염시키지 않는 것이어야 한다</li></ol></article><article class="item qa"><h3 class="q">유기농산물을 세척하거나 소독하는 경우 허용물질<span class="tag">2가지(3가지)</span></h3><ol class="a"><li>과산화수소</li><li>오존수</li><li>이산화염소수</li><li>차아염소산수</li></ol></article></div></section>
+<section id="proc" data-c="5"><header class="sh"><span class="se" aria-hidden="true">🍯</span><div><h2>가공</h2><p>O와 X를 헷갈리지 않게 표로 봐요.</p></div></header><div class="grid"><article class="item tblitem wide"><h3 class="q">식품첨가물 · 가공보조제 구분<span class="tag tag-memo">—는 노트에 없음</span></h3><div class="tblwrap"><table><thead><tr><th>물질</th><th>식품첨가물</th><th>가공보조제</th><th>사용 가능 범위</th></tr></thead><tbody><tr><th scope="row">과산화수소</th><td><span class="ox x">X</span></td><td><span class="ox o">O</span></td><td>식품 표면의 세척·소독제</td></tr><tr><th scope="row">벤토나이트</th><td><span class="ox x">X</span></td><td><span class="ox o">O</span></td><td>—</td></tr><tr><th scope="row">규조토</th><td><span class="ox x">X</span></td><td><span class="ox o">O</span></td><td>—</td></tr><tr><th scope="row">백도토</th><td><span class="ox n">—</span></td><td><span class="ox o">O</span></td><td>청징 또는 여과보조제</td></tr><tr><th scope="row">구아검</th><td><span class="ox o">O</span></td><td><span class="ox x">X</span></td><td>—</td></tr><tr><th scope="row">비타민 C</th><td><span class="ox o">O</span></td><td><span class="ox x">X</span></td><td>—</td></tr><tr><th scope="row">구연산</th><td><span class="ox o">O</span></td><td><span class="ox o">O</span></td><td>제한 없음</td></tr></tbody></table></div></article><article class="item qa"><h3 class="q">유기가공식품 인증기준: 포장<span class="tag">2가지</span></h3><ol class="a"><li>포장재와 포장방법은 유기가공식품을 충분히 보호하면서 환경에 미치는 나쁜 영향을 최소화되도록 선정하여야 한다</li><li>포장재는 유기가공식품을 오염시키지 않는 것이어야 한다</li></ol></article><article class="item qa"><h3 class="q">유기농산물을 세척하거나 소독하는 경우 허용물질<span class="tag">2가지(3가지)</span></h3><ol class="a"><li>과산화수소</li><li>오존수</li><li>이산화염소수</li><li>차아염소산수</li></ol></article></div></section>
 <p class="empty hide" id="empty">찾는 내용이 없어요. 다른 단어로 검색해 보세요.</p>
 </main>
-<footer>노트에 적힌 내용을 그대로 옮겼어요. 표기가 애매한 약어와 메모는 "노트 원문" 표시를 달아 원래 모양을 유지했어요. 시험 전에는 최신 법령과 교재로 한 번 더 확인하세요.</footer>
+<footer>노트에 적힌 내용을 그대로 옮겼어요. 표기가 애매한 약어와 메모는 "노트 원문" 표시를 달아 원래 모양을 유지했어요. 외운 카드 기록은 이 기기의 브라우저에만 저장돼요. 시험 전에는 최신 법령과 교재로 한 번 더 확인하세요.</footer>
 </div>
+
+<div class="qz hide" id="qz" role="dialog" aria-modal="true" aria-label="퀴즈">
+  <div class="qpanel" id="qpanel"></div>
+</div>
+
 <script>
 (function () {
+  var store = {};
+  try { store = JSON.parse(localStorage.getItem('organic-mem-v1') || '{}') || {}; } catch (e) { store = {}; }
+  function save() { try { localStorage.setItem('organic-mem-v1', JSON.stringify(store)); } catch (e) {} }
   var items = [].slice.call(document.querySelectorAll('.item'));
   var secs = [].slice.call(document.querySelectorAll('section'));
-  var input = document.getElementById('q');
-  var count = document.getElementById('count');
-  var empty = document.getElementById('empty');
+  items.forEach(function (it) {
+    var h = it.querySelector('.q');
+    it.dataset.key = it.closest('section').id + '|' + (h ? h.firstChild.textContent.trim() : '');
+    var b = document.createElement('button');
+    b.type = 'button'; b.className = 'mem'; b.setAttribute('aria-label', '외웠어요 표시');
+    b.textContent = '♥'; it.appendChild(b);
+    setDone(it, !!store[it.dataset.key]);
+  });
+  function setDone(it, v) {
+    it.classList.toggle('done', v);
+    var b = it.querySelector('.mem'); b.setAttribute('aria-pressed', v ? 'true' : 'false');
+    if (v) store[it.dataset.key] = 1; else delete store[it.dataset.key];
+  }
+  var input = document.getElementById('q'), count = document.getElementById('count'), empty = document.getElementById('empty');
+  var unmemBtn = document.getElementById('unmem'), onlyUn = false;
+  var MSG = [[0, '하나씩 천천히 모아 봐요 ♡'], [25, '좋은 시작이에요!'], [50, '벌써 절반이에요 ✿'], [75, '거의 다 왔어요!'], [100, '전부 외웠어요! 대단해요 🎉']];
+  function progress() {
+    var n = items.filter(function (i) { return i.classList.contains('done'); }).length, t = items.length, p = Math.round(n / t * 100);
+    document.getElementById('pfill').style.width = p + '%';
+    document.getElementById('pbar').setAttribute('aria-valuenow', p);
+    document.getElementById('ptxt').textContent = '♥ ' + n + ' / ' + t;
+    var m = MSG[0][1]; MSG.forEach(function (x) { if (p >= x[0]) m = x[1]; });
+    document.getElementById('pmsg').textContent = m;
+  }
   function run() {
     var k = input.value.trim().toLowerCase(), shown = 0;
     items.forEach(function (it) {
-      var ok = !k || it.textContent.toLowerCase().indexOf(k) !== -1;
+      var ok = (!k || it.textContent.toLowerCase().indexOf(k) !== -1) && !(onlyUn && it.classList.contains('done'));
       it.classList.toggle('hide', !ok); if (ok) shown++;
     });
     secs.forEach(function (s) { s.classList.toggle('hide', !s.querySelector('.item:not(.hide)')); });
     empty.classList.toggle('hide', shown !== 0);
-    count.textContent = k ? shown + '개 찾음' : items.length + '개 항목';
+    count.textContent = (k || onlyUn) ? shown + '개 보는 중' : items.length + '개 카드';
   }
-  input.addEventListener('input', run); run();
+  input.addEventListener('input', run);
+  unmemBtn.addEventListener('click', function () {
+    onlyUn = !onlyUn; unmemBtn.setAttribute('aria-pressed', onlyUn ? 'true' : 'false'); run();
+  });
+  function burst(x, y, n) {
+    if (window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    var set = ['💗', '✨', '🌸', '💜', '⭐'];
+    for (var i = 0; i < (n || 8); i++) {
+      var h = document.createElement('span'); h.className = 'qh'; h.textContent = set[i % set.length];
+      h.style.left = x + 'px'; h.style.top = y + 'px'; h.style.setProperty('--dx', (Math.random() * 120 - 60) + 'px');
+      document.body.appendChild(h); (function (e) { setTimeout(function () { e.remove(); }, 950); })(h);
+    }
+  }
   var btn = document.getElementById('study'), on = false;
   btn.addEventListener('click', function () {
     on = !on; document.body.classList.toggle('study', on);
     btn.setAttribute('aria-pressed', on ? 'true' : 'false');
-    btn.textContent = '암기 모드: ' + (on ? '켜짐' : '꺼짐');
-    if (!on) items.forEach(function (i) { i.classList.remove('on'); });
+    btn.textContent = on ? '가려서 외우는 중' : '가려서 외우기';
+    if (!on) [].forEach.call(document.querySelectorAll('.rev'), function (e) { e.classList.remove('rev'); });
   });
+  var HID = 'ol.a li, ul.a li, .chip, .fv, .fn, p.a, td, .bv, .ex';
   document.addEventListener('click', function (e) {
-    if (!on) return; var it = e.target.closest && e.target.closest('.item'); if (it) it.classList.toggle('on');
+    var mem = e.target.closest && e.target.closest('.mem');
+    if (mem) {
+      var it = mem.closest('.item'), v = !it.classList.contains('done');
+      setDone(it, v); save(); progress();
+      if (v) { var r = mem.getBoundingClientRect(); burst(r.left + 12, r.top + 8, 6); }
+      if (onlyUn) run(); return;
+    }
+    if (!on) return;
+    var item = e.target.closest && e.target.closest('.item'); if (!item) return;
+    var t = e.target.closest(HID);
+    if (t && item.contains(t)) { t.classList.toggle('rev'); return; }
+    if (e.target.closest('.q')) {
+      var all = [].slice.call(item.querySelectorAll(HID)), anyHidden = all.some(function (x) { return !x.classList.contains('rev'); });
+      all.forEach(function (x) { x.classList.toggle('rev', anyHidden); });
+    }
   });
+
+  /* 퀴즈 */
+  var qz = document.getElementById('qz'), qp = document.getElementById('qpanel');
+  var Q = { queue: [], total: 0, first: 0, miss: [], seen: {}, cur: null, revealed: false };
+  function esc(s) { return s.replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); }
+  function openQ() {
+    qz.classList.remove('hide'); document.body.style.overflow = 'hidden';
+    var opts = '<option value="all">전체</option>' + secs.map(function (s) { return '<option value="' + s.id + '">' + esc(s.querySelector('h2').textContent) + '</option>'; }).join('');
+    qp.innerHTML = '<div class="qtop"><span class="qn">✨ 퀴즈</span><span style="flex:1"></span><button class="qx" type="button" aria-label="닫기" data-a="close">✕</button></div>' +
+      '<div class="qcard"><div class="qq">카드 제목을 보고 답을 떠올려 봐요</div><p class="hint">정답을 본 뒤 "알아요"를 누르면 그 카드에 하트가 채워져요. "헷갈려요"를 누른 카드는 뒤에서 한 번 더 나와요.</p>' +
+      '<div class="qsetup"><label>범위 <select id="qscope">' + opts + '</select></label><label><input type="checkbox" id="qun" checked> 안 외운 카드만</label></div>' +
+      '<div class="qbtns"><button class="btn main" type="button" data-a="start">시작할래요</button></div></div>';
+    var f = qp.querySelector('[data-a="start"]'); if (f) f.focus();
+  }
+  function closeQ() { qz.classList.add('hide'); document.body.style.overflow = ''; progress(); run(); }
+  function shuffle(a) { for (var i = a.length - 1; i > 0; i--) { var j = Math.floor(Math.random() * (i + 1)), t = a[i]; a[i] = a[j]; a[j] = t; } return a; }
+  function startQ() {
+    var sc = document.getElementById('qscope').value, un = document.getElementById('qun').checked;
+    var pool = items.filter(function (it) { return (sc === 'all' || it.closest('section').id === sc) && !(un && it.classList.contains('done')); });
+    if (!pool.length) { qp.querySelector('.hint').textContent = '이 범위는 이미 모두 외웠어요! 범위를 바꾸거나 "안 외운 카드만"을 꺼 보세요.'; return; }
+    Q.queue = shuffle(pool.slice()); Q.total = pool.length; Q.first = 0; Q.miss = []; Q.seen = {}; next();
+  }
+  function bar() { return '<div class="qtop"><span class="qn">' + (Q.total - Q.queue.length + (Q.cur ? 0 : 0)) + ' / ' + Q.total + '</span><div class="pbar"><i style="width:' + Math.round((Q.total - Q.queue.length) / Q.total * 100) + '%"></i></div><button class="qx" type="button" aria-label="닫기" data-a="close">✕</button></div>'; }
+  function next() {
+    if (!Q.queue.length) return finish();
+    Q.cur = Q.queue[0]; Q.revealed = false;
+    var it = Q.cur, h = it.querySelector('.q'), tag = h.querySelector('.tag');
+    var title = h.firstChild.textContent.trim();
+    qp.innerHTML = bar() + '<div class="qcard" data-c="' + it.closest('section').dataset.c + '" style="' + secVars(it) + '"><span class="qsec">' + esc(it.closest('section').querySelector('h2').textContent) + '</span>' +
+      '<div class="qq">' + esc(title) + (tag ? '<span class="tag">' + esc(tag.textContent) + '</span>' : '') + '</div><div id="qa"></div>' +
+      '<div class="qbtns" id="qb"><button class="btn main" type="button" data-a="show">정답 보기</button></div></div>';
+    qp.querySelector('[data-a="show"]').focus();
+  }
+  function secVars(it) {
+    var cs = getComputedStyle(it.closest('section'));
+    return '--ac:' + cs.getPropertyValue('--ac') + ';--ac-d:' + cs.getPropertyValue('--ac-d') + ';--ac-l:' + cs.getPropertyValue('--ac-l');
+  }
+  function show() {
+    var c = Q.cur.cloneNode(true); c.className = 'item'; c.removeAttribute('data-key');
+    var s = c.querySelector('.q'); if (s) s.remove(); var m = c.querySelector('.mem'); if (m) m.remove();
+    [].forEach.call(c.querySelectorAll('[id]'), function (e) { e.removeAttribute('id'); });
+    [].forEach.call(c.querySelectorAll('.rev'), function (e) { e.classList.remove('rev'); });
+    var qa = document.getElementById('qa'); qa.className = 'qans'; qa.appendChild(c);
+    document.getElementById('qb').innerHTML = '<button class="btn main" type="button" data-a="know">알아요 ♥</button><button class="btn alt" type="button" data-a="miss">헷갈려요</button>';
+    document.getElementById('qb').firstChild.focus();
+  }
+  function answer(known, ev) {
+    var it = Q.queue.shift(), key = it.dataset.key, firstTime = !Q.seen[key]; Q.seen[key] = 1;
+    if (known) { if (firstTime) Q.first++; setDone(it, true); save(); if (ev) burst(ev.clientX, ev.clientY, 8); }
+    else { if (Q.miss.indexOf(it) < 0) Q.miss.push(it); Q.queue.push(it); }
+    Q.cur = null;
+    if (known) { Q.doneN = (Q.doneN || 0); }
+    next();
+  }
+  function finish() {
+    var pct = Math.round(Q.first / Q.total * 100);
+    var msg = pct === 100 ? '한 번에 다 맞혔어요! 🎉' : pct >= 70 ? '아주 잘했어요 ✿' : '괜찮아요, 반복하면 외워져요 ♡';
+    qp.innerHTML = '<div class="qtop"><span class="qn">끝!</span><span style="flex:1"></span><button class="qx" type="button" aria-label="닫기" data-a="close">✕</button></div>' +
+      '<div class="qcard qres"><div class="big">' + Q.first + ' / ' + Q.total + '</div><div class="qq">' + msg + '</div>' +
+      (Q.miss.length ? '<p class="hint">한 번 헷갈렸던 카드</p><ul>' + Q.miss.map(function (m) { return '<li>' + esc(m.querySelector('.q').firstChild.textContent.trim()) + '</li>'; }).join('') + '</ul>' : '') +
+      '<div class="qbtns"><button class="btn main" type="button" data-a="again">다시 하기</button><button class="btn" type="button" data-a="close">닫기</button></div></div>';
+    burst(window.innerWidth / 2, window.innerHeight / 2, 14);
+    qp.querySelector('[data-a="again"]').focus();
+  }
+  document.getElementById('quiz').addEventListener('click', openQ);
+  qz.addEventListener('click', function (e) {
+    if (e.target === qz) return closeQ();
+    var a = e.target.closest && e.target.closest('[data-a]'); if (!a) return;
+    var k = a.getAttribute('data-a');
+    if (k === 'close') closeQ(); else if (k === 'start') startQ(); else if (k === 'show') show();
+    else if (k === 'know') answer(true, e); else if (k === 'miss') answer(false, e); else if (k === 'again') openQ();
+  });
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && !qz.classList.contains('hide')) closeQ(); });
+  run(); progress();
 })();
 (function () {
   var lane = document.getElementById('lane'), farmer = document.getElementById('farmer');
