@@ -118,10 +118,53 @@ tr:last-child th, tr:last-child td { border-bottom: 0; }
 .hide { display: none !important; }
 .empty { margin-top: 28px; text-align: center; color: var(--muted); }
 footer { margin-top: 52px; color: var(--muted); font-size: 14px; max-width: 70ch; }
-@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+/* 스크롤 따라 걷는 농부 */
+body { padding-bottom: calc(110px + env(safe-area-inset-bottom, 0px)); }
+.farm { position: fixed; left: 0; right: 0; bottom: 0; z-index: 6; height: calc(74px + env(safe-area-inset-bottom, 0px)); pointer-events: none;
+  background: linear-gradient(to bottom, transparent, color-mix(in srgb, var(--green-l) 55%, var(--bg)) 70%); }
+.farm .ground { position: absolute; left: 0; right: 0; bottom: env(safe-area-inset-bottom, 0px); height: 14px; background: var(--soil);
+  border-top: 5px solid var(--green); }
+.farm .lane { position: absolute; left: max(16px, env(safe-area-inset-left, 0px)); right: max(16px, env(safe-area-inset-right, 0px)); bottom: calc(14px + env(safe-area-inset-bottom, 0px)); height: 60px; }
+.sprout-s { position: absolute; bottom: 0; width: 22px; height: 26px; transform-origin: 50% 100%; transform: translateX(-50%) scale(.28); opacity: .55; transition: transform .35s cubic-bezier(.3,1.5,.5,1), opacity .25s; }
+.sprout-s.on { transform: translateX(-50%) scale(1); opacity: 1; }
+.sprout-s .st-{ stroke: var(--green-d); }
+.farmer { position: absolute; bottom: -2px; left: 0; width: 46px; height: 58px; will-change: transform; }
+.farmer .flip { width: 100%; height: 100%; transform-origin: 50% 100%; transition: transform .18s; }
+.farmer.left .flip { transform: scaleX(-1); }
+.farmer svg { width: 100%; height: 100%; overflow: visible; }
+.farmer .leg, .farmer .arm { transform-box: fill-box; transform-origin: 50% 0; }
+.farmer.walk .body { animation: bob .32s ease-in-out infinite alternate; }
+.farmer.walk .leg-a, .farmer.walk .arm-b { animation: swing .32s ease-in-out infinite alternate; }
+.farmer.walk .leg-b, .farmer.walk .arm-a { animation: swing .32s ease-in-out infinite alternate-reverse; }
+@keyframes swing { from { transform: rotate(-26deg); } to { transform: rotate(26deg); } }
+@keyframes bob { from { transform: translateY(0); } to { transform: translateY(-2.5px); } }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .farmer.walk .body, .farmer.walk .leg, .farmer.walk .arm { animation: none; } .sprout-s { transition: none; } }
 </style>
 </head>
 <body>
+<div class="farm" aria-hidden="true"><div class="ground"></div><div class="lane" id="lane">
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+    <symbol id="spr" viewBox="0 0 22 26"><path d="M11 25V13" stroke="#1B5430" stroke-width="2.4" stroke-linecap="round" fill="none"/><path d="M11 14C11 6 5 3 1 4c0 7 4 11 10 10z" fill="#2E7D3E"/><path d="M11 12C11 5 16 2 21 3c0 7-4 10-10 9z" fill="#8CBF55"/></symbol>
+  </defs></svg>
+  <div class="farmer" id="farmer"><div class="flip"><svg viewBox="0 0 46 58" aria-hidden="true">
+    <g class="leg leg-a"><rect x="14" y="40" width="8" height="16" rx="4" fill="#5B3A1E"/></g>
+    <g class="leg leg-b"><rect x="25" y="40" width="8" height="16" rx="4" fill="#5B3A1E"/></g>
+    <g class="body">
+      <rect x="10" y="26" width="26" height="19" rx="7" fill="#2E7D3E"/>
+      <rect x="16" y="26" width="14" height="10" rx="3" fill="#F6F7E6"/>
+      <path d="M17 26v-4M29 26v-4" stroke="#1B5430" stroke-width="2.6" stroke-linecap="round"/>
+      <g class="arm arm-a"><rect x="5" y="28" width="6" height="14" rx="3" fill="#F6D3A8"/></g>
+      <g class="arm arm-b"><rect x="35" y="28" width="6" height="14" rx="3" fill="#F6D3A8"/></g>
+      <circle cx="23" cy="19" r="9.5" fill="#F6D3A8"/>
+      <circle cx="19.6" cy="19" r="1.3" fill="#3A2A1A"/><circle cx="26.4" cy="19" r="1.3" fill="#3A2A1A"/>
+      <path d="M19.5 23c1.2 1.5 5.8 1.5 7 0" stroke="#3A2A1A" stroke-width="1.4" fill="none" stroke-linecap="round"/>
+      <ellipse cx="23" cy="12.5" rx="17" ry="4.2" fill="#E3B95B"/>
+      <path d="M12 12.5c0-8 5-11 11-11s11 3 11 11z" fill="#EDC96F"/>
+      <path d="M12.5 11.2h21" stroke="#2E7D3E" stroke-width="2.6"/>
+      <path d="M23 2c0-4 2-6 5-7-.2 4-2 6-5 7z" fill="#8CBF55"/>
+    </g>
+  </svg></div></div>
+</div></div>
 <div class="wrap">
 <div class="hero">
   <div class="txt">
@@ -194,6 +237,36 @@ footer { margin-top: 52px; color: var(--muted); font-size: 14px; max-width: 70ch
   document.addEventListener('click', function (e) {
     if (!on) return; var it = e.target.closest && e.target.closest('.item'); if (it) it.classList.toggle('on');
   });
+})();
+(function () {
+  var lane = document.getElementById('lane'), farmer = document.getElementById('farmer');
+  if (!lane || !farmer) return;
+  var N = 12, sprouts = [], lastY = window.pageYOffset || 0, idle = null, ticking = false, dir = 1;
+  for (var i = 0; i < N; i++) {
+    var s = document.createElement('div'); s.className = 'sprout-s';
+    s.style.left = (((i + 1) / (N + 1)) * 100) + '%';
+    s.innerHTML = '<svg viewBox="0 0 22 26" width="22" height="26" aria-hidden="true"><use href="#spr"/></svg>';
+    lane.appendChild(s); sprouts.push(s);
+  }
+  function update() {
+    ticking = false;
+    var y = window.pageYOffset || document.documentElement.scrollTop || 0;
+    var max = Math.max(1, document.documentElement.scrollHeight - window.innerHeight);
+    var p = Math.min(1, Math.max(0, y / max));
+    var w = lane.clientWidth - farmer.offsetWidth;
+    farmer.style.transform = 'translateX(' + (p * w) + 'px)';
+    var cx = p * w + farmer.offsetWidth / 2, lw = lane.clientWidth;
+    sprouts.forEach(function (s, i) { s.classList.toggle('on', cx >= ((i + 1) / (N + 1)) * lw - 6); });
+    if (y !== lastY) {
+      dir = y > lastY ? 1 : -1; lastY = y;
+      farmer.classList.toggle('left', dir < 0); farmer.classList.add('walk');
+      clearTimeout(idle); idle = setTimeout(function () { farmer.classList.remove('walk'); }, 160);
+    }
+  }
+  function onScroll() { if (!ticking) { ticking = true; requestAnimationFrame(update); } }
+  window.addEventListener('scroll', onScroll, { passive: true });
+  window.addEventListener('resize', onScroll);
+  update();
 })();
 </script>
 </body>
