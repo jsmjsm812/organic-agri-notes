@@ -214,6 +214,50 @@ body { padding-bottom: calc(110px + env(safe-area-inset-bottom, 0px)); }
 .howto h2 { font-size: 16px; color: var(--green-d); }
 .howto ol { margin: 8px 0 0; padding-left: 22px; font-size: 15px; line-height: 1.7; }
 .howto li::marker { font-weight: 800; color: var(--green); }
+
+/* ---- 쓰기 채점 · 시험 · 오답 노트 ---- */
+.toggle.sec2 { background: var(--paper); color: var(--green-d); }
+.xbadge { display: inline-block; min-width: 20px; padding: 0 6px; margin-left: 4px; border-radius: 999px; background: #E5484D; color: #fff; font: 800 12px/20px var(--f-head); text-align: center; }
+.xq-area { width: 100%; min-height: 120px; margin-top: 12px; font: 500 16px/1.7 var(--f-body); padding: 10px 14px; border: 2px solid var(--green); border-radius: 12px; background: #fff; color: var(--ink); resize: vertical; }
+.xq-area:focus-visible { outline: 3px solid var(--leaf); outline-offset: 2px; }
+.xsub { font-size: 13.5px; color: var(--muted); margin-top: 6px; }
+.xverdict { display: inline-flex; align-items: center; gap: 8px; margin-top: 12px; padding: 6px 14px; border-radius: 999px; font: 800 15px var(--f-head); }
+.xverdict.ok { background: #D7F0DC; color: #1B5430; } .xverdict.mid { background: #FFF1B8; color: #7A6200; } .xverdict.no { background: #FBE0DE; color: #A8402B; }
+.xlist { list-style: none; padding: 0; margin: 10px 0 0; display: grid; gap: 6px; }
+.xlist li { position: relative; padding: 5px 10px 5px 32px; border-radius: 8px; font-size: 15px; line-height: 1.6; }
+.xlist li::before { position: absolute; left: 9px; top: 5px; font: 800 14px var(--f-head); }
+.xlist li.hit { background: #EAF6EC; } .xlist li.hit::before { content: "✓"; color: #2E7D3E; }
+.xlist li.half { background: #FFF8D6; } .xlist li.half::before { content: "△"; color: #9C7A00; }
+.xlist li.miss { background: #FCEAE8; } .xlist li.miss::before { content: "✗"; color: #A8402B; }
+.xh { margin: 14px 0 0; font: 800 13px var(--f-head); color: var(--green-d); letter-spacing: .04em; }
+.xmine { margin: 6px 0 0; white-space: pre-wrap; background: var(--bg); border-radius: 10px; padding: 8px 12px; font-size: 15px; }
+.xtime { font: 800 15px var(--f-head); color: var(--green-d); white-space: nowrap; }
+.xdots { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 12px; }
+.xdots button { appearance: none; width: 30px; height: 30px; border-radius: 50%; border: 2px solid var(--line); background: #fff; font: 800 12px var(--f-head); color: var(--muted); cursor: pointer; }
+.xdots button.done { background: var(--green-l); border-color: var(--green); color: var(--green-d); }
+.xdots button.cur { outline: 3px solid var(--leaf); outline-offset: 1px; }
+.xscore { text-align: center; padding: 6px 0 2px; }
+.xscore .big { font: 800 56px/1.1 var(--f-head); color: var(--green-d); }
+.xscore .big small { font-size: 22px; color: var(--muted); }
+.xscore .pass { display: inline-block; margin-top: 6px; padding: 4px 16px; border-radius: 999px; font: 800 15px var(--f-head); }
+.xscore .pass.y { background: #D7F0DC; color: #1B5430; } .xscore .pass.n { background: #FBE0DE; color: #A8402B; }
+.xscore svg { width: 70px; height: 70px; }
+.xres { display: grid; gap: 8px; margin-top: 14px; }
+.xres details { background: var(--paper); border: 1px solid var(--line); border-radius: 12px; padding: 0 12px; }
+.xres summary { cursor: pointer; padding: 10px 0; display: flex; align-items: center; gap: 10px; font: 700 15px var(--f-head); list-style: none; }
+.xres summary::-webkit-details-marker { display: none; }
+.xres .mk { flex: none; width: 26px; height: 26px; border-radius: 50%; display: grid; place-items: center; color: #fff; font: 800 13px var(--f-head); }
+.xres .mk.ok { background: #2E7D3E; } .xres .mk.mid { background: #C99A00; } .xres .mk.no { background: #C4513B; }
+.xres .pts { margin-left: auto; font-size: 13px; color: var(--muted); white-space: nowrap; }
+.xres .xb { padding: 0 0 12px; }
+.xres .item { border: 0; padding: 0; background: transparent; }
+.xres .item .q, .xres .item .mem { display: none; }
+.xres .item .a:first-child { margin-top: 4px; }
+.qpanel { overflow-x: hidden; } .xres, .xres details, .xres .xb, .qcard { min-width: 0; max-width: 100%; } .xres .tblwrap, .qans .tblwrap { overflow-x: auto; }
+.xnote { margin-top: 12px; font-size: 14px; color: var(--muted); }
+.xwr { display: grid; gap: 8px; margin-top: 12px; }
+.xwr .row { display: flex; align-items: center; gap: 10px; background: var(--paper); border: 1px solid var(--line); border-radius: 12px; padding: 9px 12px; font: 700 15px var(--f-head); }
+.xwr .row small { margin-left: auto; color: #A8402B; font-size: 13px; white-space: nowrap; }
 </style>
 </head>
 <body>
@@ -257,7 +301,7 @@ body { padding-bottom: calc(110px + env(safe-area-inset-bottom, 0px)); }
 <li><b>숫자는 짝으로</b>: 1년·3년, 12개월·6개월·5개월·3개월처럼 숫자는 이름과 짝을 지어 큰소리로 읽어요.</li>
 </ol></div><div class="tools">
   <div class="search"><input id="q" type="search" placeholder="검색 (예: 멀칭, 휴약기간, 3가지)" aria-label="검색"></div>
-  <button class="toggle main" id="quiz" type="button">✨ 퀴즈 시작</button><button class="toggle" id="unmem" type="button" aria-pressed="false">안 외운 카드만</button><button class="toggle" id="study" type="button" aria-pressed="false">가려서 외우기: 꺼짐</button>
+  <button class="toggle main" id="quiz" type="button">✨ 퀴즈 시작</button><button class="toggle main" id="exbtn" type="button">✍️ 쓰기 퀴즈 · 시험</button><button class="toggle sec2" id="wrbtn" type="button">📕 오답 노트<span class="xbadge hide2" id="wrcount">0</span></button><button class="toggle" id="unmem" type="button" aria-pressed="false">안 외운 카드만</button><button class="toggle" id="study" type="button" aria-pressed="false">가려서 외우기: 꺼짐</button>
   <span class="count" id="count" aria-live="polite"></span>
 </div>
 <p class="hint">"가려서 외우기"를 켜면 답이 하나씩 흐려져요. 흐린 곳을 누르면 하나씩, 카드 제목을 누르면 한꺼번에 보여요. 카드 오른쪽 위 하트를 눌러 외운 카드를 모으세요.</p>
@@ -287,7 +331,7 @@ body { padding-bottom: calc(110px + env(safe-area-inset-bottom, 0px)); }
 <p class="ex"><b>한우</b> 번식우 &gt; 비육우 &gt; 송아지</p><p class="ex"><b>돼지</b> 웅돈 &gt; 번식돈 &gt; 비육돈</p><p class="tip"><b>💡 팁</b>어른(번식우 10) &gt; 살찌우는 소(비육우 7.1) &gt; 아기(송아지 2.5). 돼지도 웅돈 &gt; 번식돈 &gt; 비육돈.</p></article><article class="item qa"><h3 class="q">축사 조건<span class="tag">3가지(2가지)</span></h3><ol class="a"><li>사료와 음수는 접근이 용이할 것</li><li>공기순환, 온도·습도, 먼지 및 가스농도가 가축건강에 유해하지 아니한 수준 이내로 유지되어야 하고, 건축물은 적절한 단열·환기시설을 갖출 것</li><li>충분한 자연환기와 햇빛이 제공될 수 있을 것</li></ol><p class="tip"><b>💡 팁</b>“먹이·공기·햇빛” → 사료와 음수 접근 · 환기와 온습도 · 자연환기와 햇빛.</p></article><article class="item qa"><h3 class="q">유기가축·비유기가축 병행사육 시 준수사항<span class="tag">3가지(1가지)</span></h3><ol class="a"><li>유기가축과 비유기가축의 생산부터 출하까지 구분관리 계획을 마련하여 이행하여야 한다</li><li>유기가축, 사료취급, 약품투여 등은 비유기가축과 구분하여 정확히 기록 관리하고 보관하여야 한다</li><li>인증가축은 비유기 가축사료, 금지물질 저장, 사료공급·혼합 및 취급 지역에서 안전하게 격리되어야 한다</li></ol><p class="tip"><b>💡 팁</b>“구·기·격” → 구분 관리 · 기록 · 격리.</p></article><article class="item qa"><h3 class="q">꿀벌의 질병 사전 예방 조치<span class="tag">4가지(5가지)</span></h3><ol class="a"><li>지역 조건에 잘 적응할 수 있는 튼튼한 품종의 선택</li><li>필요한 경우 여왕벌의 갱신</li><li>정기적인 청소 및 시설·장비의 소독</li><li>밀랍의 정기적 교체</li><li>오염된 벌통과 재료의 폐기</li></ol><p class="tip"><b>💡 팁</b>“품·여·청·밀·폐” → 튼튼한 품종 · 여왕벌 갱신 · 청소·소독 · 밀랍 교체 · 오염 폐기.</p></article><article class="item memo"><h3 class="q">기준 메모 (노트에 적힌 그대로)<span class="tag tag-memo">노트 원문</span></h3><ul class="a"><li>화학비료: 3분의 1이하 범위 내</li><li>동물용의약품 잔류 허용기준의 10분의 1</li><li>100퍼센트 유기사료 급여</li></ul></article></div></section>
 <section id="proc"><header class="sh"><h2>가공</h2><p>O와 X를 헷갈리지 않게 표로 봐요.</p><div class="mc"><span class="bub">O와 X를 헷갈리지 마요!</span><svg viewBox="0 0 100 100" role="img" aria-label="꿀벌"><ellipse cx="50" cy="94" rx="28" ry="3.5" fill="#000" opacity=".08"/><path d="M42 30l-6-14M58 30l6-14" stroke="#5A4636" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round" fill="none"/><circle cx="35" cy="15" r="3.4" fill="#5A4636"/><circle cx="65" cy="15" r="3.4" fill="#5A4636"/><ellipse cx="22" cy="46" rx="13" ry="9" transform="rotate(-25 22 46)" fill="#DFF3FF" stroke="#5A4636" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round"/><ellipse cx="78" cy="46" rx="13" ry="9" transform="rotate(25 78 46)" fill="#DFF3FF" stroke="#5A4636" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round"/><ellipse cx="50" cy="62" rx="33" ry="30" fill="#FFD94D" stroke="#5A4636" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round"/><path d="M20 72q30 12 60 0M24 84q26 8 52 0" fill="none" stroke="#5A4636" stroke-width="5" stroke-linecap="round"/><circle cx="38" cy="54" r="2.8" fill="#3B2A20"/><circle cx="62" cy="54" r="2.8" fill="#3B2A20"/><ellipse cx="30" cy="61" rx="5" ry="3.2" fill="#FFB3B3" opacity=".85"/><ellipse cx="70" cy="61" rx="5" ry="3.2" fill="#FFB3B3" opacity=".85"/><path d="M45 60q5 5 10 0" fill="none" stroke="#3B2A20" stroke-width="2" stroke-linecap="round"/></svg></div></header><div class="grid"><article class="item tblitem wide"><h3 class="q">식품첨가물 · 가공보조제 구분<span class="tag tag-memo">—는 노트에 없음</span></h3><div class="tblwrap"><table><thead><tr><th>물질</th><th>식품첨가물</th><th>가공보조제</th><th>사용 가능 범위</th></tr></thead><tbody><tr><th scope="row">과산화수소</th><td><span class="ox x">X</span></td><td><span class="ox o">O</span></td><td>식품 표면의 세척·소독제</td></tr><tr><th scope="row">벤토나이트</th><td><span class="ox x">X</span></td><td><span class="ox o">O</span></td><td>—</td></tr><tr><th scope="row">규조토</th><td><span class="ox x">X</span></td><td><span class="ox o">O</span></td><td>—</td></tr><tr><th scope="row">백도토</th><td><span class="ox n">—</span></td><td><span class="ox o">O</span></td><td>청징 또는 여과보조제</td></tr><tr><th scope="row">구아검</th><td><span class="ox o">O</span></td><td><span class="ox x">X</span></td><td>—</td></tr><tr><th scope="row">비타민 C</th><td><span class="ox o">O</span></td><td><span class="ox x">X</span></td><td>—</td></tr><tr><th scope="row">구연산</th><td><span class="ox o">O</span></td><td><span class="ox o">O</span></td><td>제한 없음</td></tr></tbody></table></div><p class="tip"><b>💡 팁</b>넣어서 같이 먹으면 첨가물(구아검·비타민 C·구연산), 쓰고 걸러내는 건 가공보조제(과산화수소·벤토나이트·규조토·백도토).</p></article><article class="item qa"><h3 class="q">유기가공식품 인증기준: 포장<span class="tag">2가지</span></h3><ol class="a"><li>포장재와 포장방법은 유기가공식품을 충분히 보호하면서 환경에 미치는 나쁜 영향을 최소화되도록 선정하여야 한다</li><li>포장재는 유기가공식품을 오염시키지 않는 것이어야 한다</li></ol><p class="tip"><b>💡 팁</b>포장은 “보호는 잘, 환경 피해는 적게, 식품 오염은 없게”.</p></article><article class="item qa"><h3 class="q">유기농산물을 세척하거나 소독하는 경우 허용물질<span class="tag">2가지(3가지)</span></h3><ol class="a"><li>과산화수소</li><li>오존수</li><li>이산화염소수</li><li>차아염소산수</li></ol><p class="tip"><b>💡 팁</b>“과·오·이·차” → 과산화수소 · 오존수 · 이산화염소수 · 차아염소산수.</p></article></div></section>
 <p class="empty hide" id="empty">찾는 내용이 없어요. 다른 단어로 검색해 보세요.</p>
-</main><div class="qz hide2" id="qz" role="dialog" aria-modal="true" aria-label="퀴즈"><div class="qpanel" id="qpanel"></div></div>
+</main><div class="qz hide2" id="ex" role="dialog" aria-modal="true" aria-label="쓰기 퀴즈와 시험"><div class="qpanel" id="expanel"></div></div><div class="qz hide2" id="qz" role="dialog" aria-modal="true" aria-label="퀴즈"><div class="qpanel" id="qpanel"></div></div>
 <footer>노트에 적힌 내용을 그대로 옮겼어요. 표기가 애매한 약어와 메모는 "노트 원문" 표시를 달아 원래 모양을 유지했어요. 시험 전에는 최신 법령과 교재로 한 번 더 확인하세요.</footer>
 </div>
 <script>
@@ -484,6 +528,288 @@ body { padding-bottom: calc(110px + env(safe-area-inset-bottom, 0px)); }
   });
   document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && !qz.classList.contains('hide2')) closeQ(); });
   progress();
+})();
+</script><script>
+(function () {
+  var items = [].slice.call(document.querySelectorAll('.item')).filter(function (it) { return it.querySelector('.q'); });
+  var secs = [].slice.call(document.querySelectorAll('section'));
+  var ov = document.getElementById('ex'), pn = document.getElementById('expanel');
+  var WK = 'organic-wrong-v1', wrong = {};
+  try { wrong = JSON.parse(localStorage.getItem(WK) || '{}') || {}; } catch (e) { wrong = {}; }
+  function saveW() { try { localStorage.setItem(WK, JSON.stringify(wrong)); } catch (e) {} badge(); }
+  function badge() {
+    var n = Object.keys(wrong).length, b = document.getElementById('wrcount');
+    b.textContent = n; b.classList.toggle('hide2', !n);
+  }
+  function esc(s) { return String(s).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); }
+  function keyOf(it) { return it.dataset.key || (it.closest('section').id + '|' + it.querySelector('.q').firstChild.textContent.trim()); }
+  function titleOf(it) { return it.querySelector('.q').firstChild.textContent.trim(); }
+  function tagOf(it) { var t = it.querySelector('.q .tag'); return t ? t.textContent.trim() : ''; }
+  function byKey(k) { for (var i = 0; i < items.length; i++) if (keyOf(items[i]) === k) return items[i]; return null; }
+  function mascot() { var s = document.querySelector('.mc svg'); return s ? s.outerHTML : ''; }
+  function shuffle(a) { for (var i = a.length - 1; i > 0; i--) { var j = Math.floor(Math.random() * (i + 1)), t = a[i]; a[i] = a[j]; a[j] = t; } return a; }
+
+  /* ---------- 정답을 채점 단위로 쪼개기 ---------- */
+  function unitsOf(it) {
+    var c = it.cloneNode(true);
+    ['.q', '.mem', '.tip'].forEach(function (s) { var e = c.querySelector(s); if (e) e.remove(); });
+    var u = [], txt = function (e) { return e.textContent.replace(/\s+/g, ' ').trim(); };
+    [].forEach.call(c.querySelectorAll('ol.a li, ul.a li'), function (e) { u.push(txt(e)); });
+    [].forEach.call(c.querySelectorAll('.chip'), function (e) { u.push(txt(e)); });
+    [].forEach.call(c.querySelectorAll('.fact'), function (e) { u.push(txt(e)); });
+    var heads = [].map.call(c.querySelectorAll('.tblwrap thead th'), function (h) { return txt(h); });
+    [].forEach.call(c.querySelectorAll('.tblwrap tbody tr'), function (tr) {
+      if (tr.querySelector('.ox')) {
+        var cells = [].slice.call(tr.children), lab = [];
+        cells.forEach(function (td, k) { if (td.querySelector('.ox.o') && heads[k]) lab.push(heads[k]); });
+        u.push(txt(cells[0]) + ' ' + lab.join(' '));
+      } else u.push(txt(tr));
+    });
+    [].forEach.call(c.querySelectorAll('.bar'), function (e) { u.push(txt(e)); });
+    var p = c.querySelector('p.a'); if (p) u.push(txt(p));
+    [].forEach.call(c.querySelectorAll('figcaption'), function (e) { u.push(txt(e)); });
+    if (!u.length) u.push(txt(c));
+    return u.filter(Boolean);
+  }
+  var STOP = { '것': 1, '있는': 1, '있다': 1, '한다': 1, '않을': 1, '않는': 1, '않아야': 1, '수': 1, '등': 1, '및': 1, '또는': 1, '그': 1, '위해': 1, '하여': 1, '있어야': 1, '해야': 1, '하고': 1, '때': 1, '경우': 1, '노트': 1, '원문': 1, '하는': 1, '이상': 1, '이하': 1, '정도': 1, '가지': 1, '같은': 1, '대한': 1, '대하여': 1, '모든': 1, '통해': 1, '한다.': 1 };
+  var SUF = ['으로', '에서', '에게', '까지', '부터', '하여', '하고', '하는', '되는', '되지', '하게', '이다', '한다', '된다', '이며', '에는', '에도', '이나', '이고', '해서', '를', '을', '이', '가', '은', '는', '의', '에', '로', '과', '와', '도', '만', '한', '할', '될', '된', '인', '해'];
+  function stem(w) {
+    for (var i = 0; i < SUF.length; i++) { var s = SUF[i]; if (w.length > s.length + 1 && w.slice(-s.length) === s) return w.slice(0, -s.length); }
+    return w;
+  }
+  function norm(s) { return String(s).toLowerCase().replace(/[^0-9a-z가-힣㎡℃%]/g, ''); }
+  function keywordsOf(u) {
+    var words = u.replace(/[()·,.:;\/→>＞<=+*“”"'’‘~\[\]?!—–\-]/g, ' ').split(/\s+/), out = [], seen = {};
+    words.forEach(function (w) {
+      var nums = w.match(/\d+(\.\d+)?/g);
+      if (nums) { nums.forEach(function (n) { var k = '#' + n; if (!seen[k]) { seen[k] = 1; out.push({ t: 'num', v: n }); } }); w = w.replace(/\d+(\.\d+)?/g, ''); }
+      w = stem(w); if (!w || STOP[w]) return;
+      if (w.length < 2) return; w = norm(w); if (!w || seen[w] || /^[a-z]{1,2}$/.test(w)) return; seen[w] = 1; out.push({ t: 'kw', v: w });
+    });
+    return out;
+  }
+  function bg(s) { var a = []; for (var i = 0; i < s.length - 1; i++) a.push(s.substr(i, 2)); return a; }
+  function hasKw(k, I, Iset) {
+    if (I.indexOf(k) >= 0) return 1;
+    if (k.length >= 3 && I.indexOf(k.slice(0, -1)) >= 0) return 1;
+    if (k.length >= 4) { var b = bg(k), c = 0; b.forEach(function (x) { if (Iset[x]) c++; }); if (c / b.length >= 0.75) return 1; if (I.indexOf(k.slice(0, 2)) >= 0 || I.indexOf(k.slice(-2)) >= 0) return 0.5; }
+    return 0;
+  }
+  function gradeUnit(u, I, Iset, nums) {
+    var ks = keywordsOf(u); if (!ks.length) return 1;
+    var got = 0;
+    ks.forEach(function (k) {
+      if (k.t === 'num') { if (nums.indexOf(k.v) >= 0) got++; } else got += hasKw(k.v, I, Iset);
+    });
+    return got / ks.length;
+  }
+  function grade(it, text) {
+    var us = unitsOf(it), I = norm(text), Iset = {}, nums = (String(text).match(/\d+(\.\d+)?/g) || []);
+    bg(I).forEach(function (x) { Iset[x] = 1; });
+    var res = us.map(function (u) { var s = I ? gradeUnit(u, I, Iset, nums) : 0; return { u: u, s: s, st: s >= 0.6 ? 'hit' : (s >= 0.35 ? 'half' : 'miss') }; });
+    var sum = 0; res.forEach(function (r) { sum += r.st === 'hit' ? 1 : (r.st === 'half' ? 0.5 : 0); });
+    var ratio = res.length ? sum / res.length : 0;
+    return { units: res, ratio: ratio, v: !String(text).trim() ? 'no' : (ratio >= 0.6 ? 'ok' : (ratio >= 0.35 ? 'mid' : 'no')) };
+  }
+  function answerHTML(it) {
+    var c = it.cloneNode(true); c.className = 'item'; c.removeAttribute('data-key');
+    ['.q', '.mem'].forEach(function (s) { var e = c.querySelector(s); if (e) e.remove(); });
+    [].forEach.call(c.querySelectorAll('[id]'), function (e) { e.removeAttribute('id'); });
+    [].forEach.call(c.querySelectorAll('.rev'), function (e) { e.classList.remove('rev'); });
+    return c.outerHTML;
+  }
+  function checklist(g) {
+    return '<ul class="xlist">' + g.units.map(function (r) { return '<li class="' + r.st + '">' + esc(r.u) + '</li>'; }).join('') + '</ul>';
+  }
+  var VTXT = { ok: '정답 ✓', mid: '부분 정답 △', no: '오답 ✗' };
+  function noteWrong(it, v) {
+    var k = keyOf(it);
+    if (v === 'ok') { if (wrong[k]) { wrong[k].ok = (wrong[k].ok || 0) + 1; if (wrong[k].ok >= 1) delete wrong[k]; } }
+    else { var w = wrong[k] || { n: 0 }; w.n++; w.ok = 0; w.t = Date.now(); wrong[k] = w; }
+  }
+
+  /* ---------- 상태 ---------- */
+  var S = null, timer = null;
+  function open() { ov.classList.remove('hide2'); document.body.style.overflow = 'hidden'; }
+  function close() { clearInterval(timer); ov.classList.add('hide2'); document.body.style.overflow = ''; }
+  function scopeOpts() { return '<option value="all">전체</option>' + secs.map(function (s) { return '<option value="' + s.id + '">' + esc(s.querySelector('h2').textContent) + '</option>'; }).join(''); }
+  function top(title, extra) {
+    return '<div class="qtop"><span class="qn">' + title + '</span><span style="flex:1"></span>' + (extra || '') + '<button class="qx" type="button" aria-label="닫기" data-x="close">✕</button></div>';
+  }
+
+  function menu() {
+    clearInterval(timer); S = null; open();
+    var nw = Object.keys(wrong).length;
+    pn.innerHTML = top('✍️ 쓰기 퀴즈 · 시험') +
+      '<div class="qcard"><div class="qq">어떤 걸로 해 볼까요?</div>' +
+      '<p class="xsub">내가 쓴 답을 채점해 줘요. 단어가 똑같지 않아도 핵심 내용이 어느 정도 맞으면 맞게 쳐요. 숫자는 정확해야 해요.</p>' +
+      '<div class="qsetup"><label>범위 <select id="xs">' + scopeOpts() + '</select></label>' +
+      '<label>연습 문제 수 <select id="xn"><option value="5">5문제</option><option value="10" selected>10문제</option><option value="20">20문제</option><option value="999">전체</option></select></label></div>' +
+      '<div class="qbtns"><button class="toggle main" type="button" data-x="practice">✍️ 쓰기 연습 (바로 채점)</button>' +
+      '<button class="toggle" type="button" data-x="exam">📝 시험 모드 (20문제)</button></div>' +
+      '<div class="qbtns"><button class="toggle alt" type="button" data-x="wrong"' + (nw ? '' : ' disabled') + '>📕 오답 노트 (' + nw + ')</button></div>' +
+      '<p class="xnote">시험 모드: 20문제, 문제당 5점, 60점 이상 합격. 끝까지 풀고 제출하면 한꺼번에 채점하고 오답 정리를 보여 줘요.</p></div>';
+  }
+  function pool(sc) { return items.filter(function (it) { return sc === 'all' || it.closest('section').id === sc; }); }
+
+  /* ---------- 연습 ---------- */
+  function startPractice(list) {
+    if (!list) {
+      var sc = document.getElementById('xs').value, n = parseInt(document.getElementById('xn').value, 10);
+      list = shuffle(pool(sc)).slice(0, n);
+    }
+    S = { mode: 'practice', list: list, i: 0, res: [], answers: [] }; open(); showQ();
+  }
+  function head() {
+    var n = S.list.length, d = S.mode === 'practice' ? S.i : S.i;
+    if (S.mode === 'practice') return top((S.i + 1) + ' / ' + n, '<div class="pbar" style="flex:1 1 90px"><i style="width:' + Math.round(S.i / n * 100) + '%"></i></div>');
+    return top('📝 시험 ' + (S.i + 1) + ' / ' + n, '<span class="xtime" id="xtime">00:00</span>');
+  }
+  function showQ() {
+    var it = S.list[S.i], tg = tagOf(it);
+    var area = '<textarea class="xq-area" id="xa" placeholder="아는 만큼 써 보세요. 항목은 쉼표나 줄바꿈으로 나눠도 되고 문장으로 써도 돼요." aria-label="내 답">' + esc(S.answers[S.i] || '') + '</textarea>';
+    var btns;
+    if (S.mode === 'practice') btns = '<div class="qbtns"><button class="toggle main" type="button" data-x="grade">채점하기</button><button class="toggle alt" type="button" data-x="skip">모르겠어요</button></div>';
+    else {
+      var dots = S.list.map(function (_, k) { return '<button type="button" data-x="go" data-k="' + k + '" class="' + (S.answers[k] && S.answers[k].trim() ? 'done ' : '') + (k === S.i ? 'cur' : '') + '" aria-label="' + (k + 1) + '번 문제">' + (k + 1) + '</button>'; }).join('');
+      btns = '<div class="xdots">' + dots + '</div><div class="qbtns"><button class="toggle" type="button" data-x="prev"' + (S.i ? '' : ' disabled') + '>← 이전</button>' +
+        (S.i < S.list.length - 1 ? '<button class="toggle main" type="button" data-x="next">다음 →</button>' : '<button class="toggle main" type="button" data-x="submit">제출하기</button>') + '</div>' +
+        '<p class="xnote" id="xwarn"></p>';
+    }
+    pn.innerHTML = head() + '<div class="qcard"><span class="qsec">' + esc(it.closest('section').querySelector('h2').textContent) + '</span>' +
+      '<div class="qq">' + esc(titleOf(it)) + (tg ? '<span class="tag">' + esc(tg) + '</span>' : '') + '</div>' + area + (S.mode === 'practice' ? btns : '') + '</div>' + (S.mode === 'exam' ? btns : '');
+    var a = document.getElementById('xa'); if (a) a.focus();
+    if (S.mode === 'exam') tick();
+  }
+  function saveCur() { var a = document.getElementById('xa'); if (a && S) S.answers[S.i] = a.value; }
+  function gradePractice(skip) {
+    var it = S.list[S.i], text = skip ? '' : (document.getElementById('xa').value || ''), g = grade(it, text);
+    S.answers[S.i] = text; S.res[S.i] = { g: g, v: g.v }; noteWrong(it, g.v); saveW();
+    var last = S.i >= S.list.length - 1;
+    pn.innerHTML = head() + '<div class="qcard"><span class="qsec">' + esc(it.closest('section').querySelector('h2').textContent) + '</span><div class="qq">' + esc(titleOf(it)) + '</div>' +
+      '<div class="xverdict ' + g.v + '">' + VTXT[g.v] + ' · 맞힌 비율 ' + Math.round(g.ratio * 100) + '%</div>' +
+      (text.trim() ? '<div class="xh">내 답</div><div class="xmine">' + esc(text) + '</div>' : '') +
+      '<div class="xh">채점 (✓ 맞음 · △ 일부 · ✗ 놓침)</div>' + checklist(g) +
+      '<div class="xh">정답 카드</div>' + answerHTML(it) +
+      '<div class="qbtns"><button class="toggle main" type="button" data-x="' + (last ? 'finish' : 'nextq') + '">' + (last ? '결과 보기' : '다음 문제') + '</button>' +
+      (g.v !== 'ok' ? '<button class="toggle" type="button" data-x="mine">내 답도 맞아요 (정답 처리)</button>' : '') + '</div></div>';
+    if (g.v === 'ok') burst();
+  }
+  function burst() {
+    if (window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    var set = ['🌱', '🥕', '🍀', '🌾', '💚'], r = pn.getBoundingClientRect();
+    for (var i = 0; i < 8; i++) {
+      var h = document.createElement('span'); h.className = 'qh'; h.textContent = set[i % set.length];
+      h.style.left = (r.left + r.width / 2) + 'px'; h.style.top = (r.top + 80) + 'px'; h.style.setProperty('--dx', (Math.random() * 160 - 80) + 'px');
+      document.body.appendChild(h); (function (e) { setTimeout(function () { e.remove(); }, 950); })(h);
+    }
+  }
+
+  /* ---------- 시험 ---------- */
+  function startExam() {
+    var sc = document.getElementById('xs').value, list = shuffle(pool(sc)).slice(0, 20);
+    S = { mode: 'exam', list: list, i: 0, answers: [], t0: Date.now() }; open(); showQ();
+    clearInterval(timer); timer = setInterval(tick, 1000);
+  }
+  function tick() {
+    var e = document.getElementById('xtime'); if (!e || !S) return;
+    var s = Math.floor((Date.now() - S.t0) / 1000), m = Math.floor(s / 60); s = s % 60;
+    e.textContent = (m < 10 ? '0' : '') + m + ':' + (s < 10 ? '0' : '') + s;
+  }
+  function submitExam(force) {
+    saveCur();
+    var empty = S.list.filter(function (_, k) { return !(S.answers[k] || '').trim(); }).length;
+    if (empty && !force) {
+      var w = document.getElementById('xwarn');
+      if (w) w.innerHTML = '빈 문제가 ' + empty + '개 있어요. 그대로 제출할까요? <button class="toggle" type="button" data-x="submit2">그대로 제출</button>';
+      return;
+    }
+    clearInterval(timer);
+    S.res = S.list.map(function (it, k) { var g = grade(it, S.answers[k] || ''); noteWrong(it, g.v); return { g: g, v: g.v }; });
+    S.elapsed = Math.floor((Date.now() - S.t0) / 1000); saveW(); result();
+  }
+
+  /* ---------- 결과 / 오답 정리 ---------- */
+  function ptsOf(r, per) { return r.v === 'ok' ? per : (r.v === 'mid' ? Math.round(per * r.g.ratio * 10) / 10 : 0); }
+  function result() {
+    var n = S.list.length, per = 100 / n, exam = S.mode === 'exam', score = 0, ok = 0, mid = 0, no = 0;
+    S.res.forEach(function (r) { score += ptsOf(r, per); if (r.v === 'ok') ok++; else if (r.v === 'mid') mid++; else no++; });
+    score = Math.round(score * 10) / 10;
+    var pass = score >= 60, mm = exam ? Math.floor(S.elapsed / 60) + '분 ' + (S.elapsed % 60) + '초' : '';
+    var head = exam ? '<div class="xscore">' + mascot() + '<div class="big">' + score + '<small> / 100</small></div><span class="pass ' + (pass ? 'y' : 'n') + '">' + (pass ? '합격권이에요! 🎉' : '아쉬워요, 오답 정리를 보고 다시!') + '</span>' +
+      '<p class="xsub">정답 ' + ok + ' · 부분 ' + mid + ' · 오답 ' + no + ' · 걸린 시간 ' + mm + '</p></div>' :
+      '<div class="xscore">' + mascot() + '<div class="big">' + ok + '<small> / ' + n + '</small></div><p class="xsub">정답 ' + ok + ' · 부분 ' + mid + ' · 오답 ' + no + '</p></div>';
+    var rows = S.list.map(function (it, k) {
+      var r = S.res[k], sym = r.v === 'ok' ? '✓' : (r.v === 'mid' ? '△' : '✗');
+      return '<details data-k="' + k + '"' + (r.v !== 'ok' ? ' open' : '') + '><summary><span class="mk ' + r.v + '">' + sym + '</span>' + (k + 1) + '. ' + esc(titleOf(it)) +
+        '<span class="pts">' + (exam ? ptsOf(r, per).toFixed(1).replace(/\.0$/, '') + '점' : Math.round(r.g.ratio * 100) + '%') + '</span></summary><div class="xb">' +
+        ((S.answers[k] || '').trim() ? '<div class="xh">내 답</div><div class="xmine">' + esc(S.answers[k]) + '</div>' : '<div class="xh">내 답</div><div class="xmine">(비워 뒀어요)</div>') +
+        '<div class="xh">채점</div>' + checklist(r.g) + '<div class="xh">정답 카드</div>' + answerHTML(it) +
+        '<div class="qbtns"><button class="toggle" type="button" data-x="flip" data-k="' + k + '">' + (r.v === 'ok' ? '내 답이 틀렸어요 (오답 처리)' : '내 답도 맞아요 (정답 처리)') + '</button></div></div></details>';
+    }).join('');
+    var wrongList = S.list.filter(function (_, k) { return S.res[k].v !== 'ok'; });
+    pn.innerHTML = top(exam ? '📝 시험 결과' : '✍️ 연습 결과') + '<div class="qcard">' + head +
+      '<div class="xnote">틀린 문제는 자동으로 📕 오답 노트에 저장됐어요. 이후에 다시 맞히면 노트에서 사라져요.</div>' +
+      '<div class="xres">' + rows + '</div>' +
+      '<div class="qbtns"><button class="toggle main" type="button" data-x="menu">처음으로</button>' +
+      (wrongList.length ? '<button class="toggle alt" type="button" data-x="retry">틀린 ' + wrongList.length + '문제 다시 쓰기</button>' : '') + '</div></div>';
+    burstDone(pass || !exam);
+  }
+  function burstDone(good) { if (good) burst(); }
+  function flip(k) {
+    var it = S.list[k], r = S.res[k]; r.v = r.v === 'ok' ? 'no' : 'ok'; noteWrong(it, r.v); saveW(); result();
+    var d = pn.querySelector('details[data-k="' + k + '"]'); if (d) d.open = true;
+  }
+
+  /* ---------- 오답 노트 ---------- */
+  function wrongBook() {
+    S = null; open();
+    var ks = Object.keys(wrong).sort(function (a, b) { return (wrong[b].t || 0) - (wrong[a].t || 0); });
+    var rows = ks.map(function (k) {
+      var it = byKey(k); if (!it) return '';
+      return '<details><summary><span class="mk no">✗</span>' + esc(titleOf(it)) + '<span class="pts">' + wrong[k].n + '번 틀림</span></summary><div class="xb"><div class="xh">정답 카드</div>' + answerHTML(it) + '</div></details>';
+    }).join('');
+    pn.innerHTML = top('📕 오답 노트') + '<div class="qcard"><div class="qq">틀렸던 카드 ' + ks.length + '장</div>' +
+      (ks.length ? '<p class="xsub">카드를 눌러 정답을 보고, “다시 쓰기”로 맞히면 노트에서 빠져요.</p><div class="xres">' + rows + '</div>' +
+        '<div class="qbtns"><button class="toggle main" type="button" data-x="retryall">틀린 카드 다시 쓰기</button><button class="toggle alt" type="button" data-x="clear">노트 비우기</button><button class="toggle" type="button" data-x="menu">처음으로</button></div>' :
+        '<p class="xsub">아직 틀린 카드가 없어요. 쓰기 연습이나 시험을 풀어 보세요!</p><div class="qbtns"><button class="toggle main" type="button" data-x="menu">처음으로</button></div>') + '</div>';
+  }
+  function listFromWrong() { return shuffle(Object.keys(wrong).map(byKey).filter(Boolean)); }
+
+  /* ---------- 이벤트 ---------- */
+  document.getElementById('exbtn').addEventListener('click', menu);
+  document.getElementById('wrbtn').addEventListener('click', wrongBook);
+  ov.addEventListener('click', function (e) {
+    if (e.target === ov) return close();
+    var b = e.target.closest && e.target.closest('[data-x]'); if (!b || b.disabled) return;
+    var x = b.getAttribute('data-x');
+    if (x === 'close') close();
+    else if (x === 'menu') menu();
+    else if (x === 'practice') startPractice();
+    else if (x === 'exam') startExam();
+    else if (x === 'wrong') wrongBook();
+    else if (x === 'grade') gradePractice(false);
+    else if (x === 'skip') gradePractice(true);
+    else if (x === 'nextq') { S.i++; showQ(); }
+    else if (x === 'finish') result();
+    else if (x === 'mine') { var r = S.res[S.i]; r.v = 'ok'; noteWrong(S.list[S.i], 'ok'); saveW(); var last = S.i >= S.list.length - 1; b.remove(); var v = pn.querySelector('.xverdict'); v.className = 'xverdict ok'; v.textContent = '정답 ✓ (직접 정답 처리)'; }
+    else if (x === 'prev') { saveCur(); S.i--; showQ(); }
+    else if (x === 'next') { saveCur(); S.i++; showQ(); }
+    else if (x === 'go') { saveCur(); S.i = parseInt(b.getAttribute('data-k'), 10); showQ(); }
+    else if (x === 'submit') submitExam(false);
+    else if (x === 'submit2') submitExam(true);
+    else if (x === 'flip') flip(parseInt(b.getAttribute('data-k'), 10));
+    else if (x === 'retry') { var l = S.list.filter(function (_, k) { return S.res[k].v !== 'ok'; }); startPractice(shuffle(l)); }
+    else if (x === 'retryall') { var l2 = listFromWrong(); if (l2.length) startPractice(l2); }
+    else if (x === 'clear') { wrong = {}; saveW(); wrongBook(); }
+  });
+  document.addEventListener('keydown', function (e) {
+    if (ov.classList.contains('hide2')) return;
+    if (e.key === 'Escape') close();
+    else if (e.key === 'Enter' && (e.ctrlKey || e.metaKey) && S && S.mode === 'practice' && document.getElementById('xa')) gradePractice(false);
+  });
+  badge();
+  window.__organicGrade = { grade: grade, items: items, unitsOf: unitsOf };
 })();
 </script></body>
 </html>
